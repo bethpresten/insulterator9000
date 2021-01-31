@@ -5,7 +5,9 @@ import axios from "axios";
 function App() {
   useEffect(() => {
     axios.get("/api/config").then((response) => {
-      console.log(response.data);
+      console.log(response.data).catch((err) => {
+        if (err) throw err;
+      });
     });
   }, []);
 
