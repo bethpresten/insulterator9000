@@ -1,0 +1,11 @@
+nav {
+  background-color: #bd6140;
+  font-size: 30px;
+  font-family: "Handlee", cursive;
+  /* font-family: 'Lato', sans-serif; */
+}
+
+#nav-mobile {
+  font-size: 35px;
+  font-family: "Lora", serif;
+}
