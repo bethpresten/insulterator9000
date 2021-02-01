@@ -1,0 +1,16 @@
+#form-group {
+  width: 65%;
+  font-family: "Lato", sans-serif;
+}
+
+#contact-form {
+  align-items: center;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+}
+
+.btn {
+  border-radius: 10px;
+  background-color: #69c3f0;
+  font-family: "Lato", sans-serif;
+}
