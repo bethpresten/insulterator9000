@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/bethpresten/insulterator9000#readme",
   "dependencies": {
+    "bad-words": "^3.0.4",
     "concurrently": "^5.3.0",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
