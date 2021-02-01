@@ -8,8 +8,9 @@ function Contact() {
         <form className="col s12">
           <div className="row">
             <div className="input-field col s8">
+              <i class="material-icons prefix">account_circle</i>
               <input
-                placeholder="First and Last Name"
+                placeholder="Name"
                 id="name"
                 type="text"
                 className="validate"
@@ -17,37 +18,33 @@ function Contact() {
               />
             </div>
           </div>
-
-          <div className="input-field col s6">
-            <input
-              type="email"
-              className="validate"
-              placeholder="Email address"
-              name="Email"
-              id="_replyto"
-            />
-          </div>
           <div className="row">
-            <div className="input-field col s6">
+            <div className="input-field col s8">
+              <i class="material-icons prefix">email</i>
+              <input
+                type="email"
+                className="validate"
+                placeholder="Email address"
+                name="Email"
+                id="_replyto"
+              />
+            </div>
+            <div className="input-field col s8" id="message-row">
+              <i class="material-icons prefix">message</i>
               <input
                 id="message"
-                type="password"
+                type="text"
                 className="validate"
                 name="Message"
                 placeholder="Message"
               />
             </div>
-            <div className="row">
-              <div className="col s6">
-                <button
-                  className="btn"
-                  type="submit"
-                  name="action"
-                  value="Send"
-                >
-                  Submit
-                </button>
-              </div>
+          </div>
+          <div className="row">
+            <div className="col s6">
+              <button className="btn" type="submit" name="action" value="Send">
+                Submit
+              </button>
             </div>
           </div>
         </form>
