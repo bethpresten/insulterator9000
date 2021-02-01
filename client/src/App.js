@@ -1,21 +1,27 @@
-import './App.css';
-import { useEffect } from "react";
-import axios from "axios";
+import './App.css'
+import { useEffect } from 'react'
+import axios from 'axios'
 
-function App() {
+function App () {
   useEffect(() => {
-    // axios.get("/api/config").then((response) => {
-    //   console.log(response.data).catch((err) => {
-    //     if (err) throw err;
-    //   });
-    // });
-  }, []);
+    axios
+      .get(
+        'https://cors-anywhere.herokuapp.com/http://insult.mattbas.org/api//insult.json?who=sponge+bob',
+        {}
+      )
+      .then(function (response) {
+        console.log(response.data.insult)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+  }, [])
 
   return (
-    <div className="App">
-<h1>Hello World!</h1>
+    <div className='App'>
+      <h1>Hello World!</h1>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
