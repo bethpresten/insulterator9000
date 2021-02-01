@@ -5,6 +5,7 @@ import About from "./containers/About/About";
 import Contact from "./containers/Contact/Contact";
 import Registration from "./containers/Registration/Registration";
 import Login from "./containers/Login/Login";
+import Dashboard from "./containers/Dashboard/Dashboard";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import { useEffect } from 'react'
@@ -39,6 +40,7 @@ function App() {
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/login" component={Login} />
+            <Route path="/dashboard" component={Dashboard} />
             <Route path="/registration" component={Registration} />
           </Switch>
         </Router>

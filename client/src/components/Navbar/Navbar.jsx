@@ -57,6 +57,7 @@ function Navbar() {
                 to="/registration"
                 className="nav-link"
                 activeClassName="active"
+                id="hide"
               >
                 Registration
               </NavLink>
