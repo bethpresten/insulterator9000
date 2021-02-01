@@ -1,4 +1,5 @@
 import React from "react";
+import "./Contact.css";
 
 function Contact() {
   return (
@@ -39,7 +40,7 @@ function Contact() {
             <div className="row">
               <div className="col s6">
                 <button
-                  className="btn waves-effect waves-light"
+                  className="btn"
                   type="submit"
                   name="action"
                   value="Send"
