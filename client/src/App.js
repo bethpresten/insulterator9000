@@ -1,6 +1,9 @@
 import './App.css'
 import { useEffect } from 'react'
 import axios from 'axios'
+const Filter = require('bad-words'),
+  filter = new Filter()
+filter.addWords('dicks', 'fuckton')
 
 function App () {
   useEffect(() => {
@@ -10,7 +13,8 @@ function App () {
         {}
       )
       .then(function (response) {
-        console.log(response.data.insult)
+        console.log(`before: ${response.data.insult}`)
+        console.log(`after: ${filter.clean(response.data.insult)}`)
       })
       .catch(function (error) {
         console.log(error)
