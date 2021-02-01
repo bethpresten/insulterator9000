@@ -9,3 +9,7 @@ nav {
   font-size: 35px;
   font-family: "Lora", serif;
 }
+
+#hide {
+  display: none !important;
+}

@@ -3,7 +3,9 @@ import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Welcome from "./containers/Welcome/Welcome";
 import About from "./containers/About/About";
 import Contact from "./containers/Contact/Contact";
+import Registration from "./containers/Registration/Registration";
 import Login from "./containers/Login/Login";
+import Dashboard from "./containers/Dashboard/Dashboard";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import { useEffect } from 'react'
@@ -12,7 +14,7 @@ const Filter = require('bad-words'),
   filter = new Filter()
 filter.addWords('dicks', 'fuckton')
 
-function App () {
+function App() {
   useEffect(() => {
     axios
       .get(
@@ -34,10 +36,12 @@ function App () {
         <Router>
           <Navbar />
           <Switch>
+            <Route exact path="/" component={Welcome} />
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/login" component={Login} />
-            <Route path="/" component={Welcome} />
+            <Route path="/dashboard" component={Dashboard} />
+            <Route path="/registration" component={Registration} />
           </Switch>
         </Router>
         <Footer />
