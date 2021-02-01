@@ -1,6 +1,3 @@
-@media only screen and (max-width: 992px) {
-  .navbar.nav-fixed {
-    -webkit-transform: none !important;
-    transform: none !important;
-  }
+nav {
+  background-color: #bd6140;
 }
