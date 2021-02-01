@@ -1,6 +1,4 @@
 import './App.css';
-// import { useEffect } from "react";
-// import axios from "axios";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Welcome from "./containers/Welcome/Welcome";
 import About from "./containers/About/About";
@@ -8,15 +6,27 @@ import Contact from "./containers/Contact/Contact";
 import Login from "./containers/Login/Login";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import { useEffect } from 'react'
+import axios from 'axios'
+const Filter = require('bad-words'),
+  filter = new Filter()
+filter.addWords('dicks', 'fuckton')
 
-function App() {
-  // useEffect(() => {
-  //   // axios.get("/api/config").then((response) => {
-  //   //   console.log(response.data).catch((err) => {
-  //   //     if (err) throw err;
-  //   //   });
-  //   // });
-  // }, []);
+function App () {
+  useEffect(() => {
+    axios
+      .get(
+        'https://cors-anywhere.herokuapp.com/http://insult.mattbas.org/api//insult.json?who=sponge+bob',
+        {}
+      )
+      .then(function (response) {
+        console.log(`before: ${response.data.insult}`)
+        console.log(`after: ${filter.clean(response.data.insult)}`)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+  }, [])
 
   return (
     <>
@@ -36,4 +46,4 @@ function App() {
   )
 }
 
-export default App;
+export default App
