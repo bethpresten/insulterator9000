@@ -15,7 +15,8 @@ function Welcome () {
           width='480'
           height='264'
           frameBorder='0'
-          className='giphy-embed'
+          className='giphy-embed left'
+          title="Anchorman insult"
           allowFullScreen
         ></iframe>
         <iframe
@@ -23,9 +24,12 @@ function Welcome () {
           width='480'
           height='264'
           frameBorder='0'
-          className='giphy-embed'
+          className='giphy-embed right'
+          title="Ricky Gervais insult"
           allowFullScreen
         ></iframe>
+        <br />
+        <br />
       </div>
     </div>
   )
