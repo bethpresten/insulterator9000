@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./About.css";
 
 function About() {
   return (
@@ -12,12 +12,7 @@ function About() {
         needs!
       </h4>
       <button>
-        <a
-          href="mailto:prestobeth462@gmail.com"
-          style={{ color: "whitesmoke" }}
-        >
-          Contact
-        </a>
+        <a href="mailto:prestobeth462@gmail.com">Contact</a>
       </button>
     </div>
   );
