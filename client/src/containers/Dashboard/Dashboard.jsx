@@ -10,7 +10,7 @@ function Dashboard() {
         </div>
       </div>
       <div className="col s8 m5">
-        <div className="card horizontal">
+        <div className="card horizontal hoverable">
           <div className="card-stacked">
             <div className="card-content">
               <h5>Name</h5>
@@ -27,8 +27,12 @@ function Dashboard() {
           </div>
         </div>
       </div>
-      <button>Go to insult!</button>
-      <button>Update my profile</button>
+      <button className="waves-effect waves btn hoverable">
+        Go to insult!
+      </button>
+      <button className="waves-effect waves btn hoverable">
+        Update my profile
+      </button>
     </div>
   );
 }
