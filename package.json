@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "proxy": "localhost:3001",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -25,6 +26,7 @@
   },
   "homepage": "https://github.com/bethpresten/insulterator9000#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "bad-words": "^3.0.4",
     "concurrently": "^5.3.0",
     "express": "^4.17.1",

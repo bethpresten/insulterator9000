@@ -16,18 +16,20 @@ filter.addWords('dicks', 'fuckton')
 
 function App() {
   useEffect(() => {
-    axios
-      .get(
-        'https://cors-anywhere.herokuapp.com/http://insult.mattbas.org/api//insult.json?who=sponge+bob',
-        {}
-      )
-      .then(function (response) {
-        console.log(`before: ${response.data.insult}`)
-        console.log(`after: ${filter.clean(response.data.insult)}`)
-      })
-      .catch(function (error) {
-        console.log(error)
-      })
+
+//Get insult by user route    
+    // axios
+    //   .get(
+    //     `api/insult/getbyuser/name`,
+    //     {}
+    //   )
+    //   .then(function (response) {
+    //     console.log(`before: ${response.data.insult}`)
+    //     console.log(`after: ${filter.clean(response.data.insult)}`)
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error)
+    //   })
   }, [])
 
   return (
@@ -43,8 +45,8 @@ function App() {
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/registration" component={Registration} />
           </Switch>
-        </Router>
         <Footer />
+        </Router>
       </div>
     </>
   )
