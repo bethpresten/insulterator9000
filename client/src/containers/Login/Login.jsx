@@ -1,4 +1,5 @@
 import React from "react";
+import "./Login.css";
 
 function Login() {
   return (
@@ -9,14 +10,14 @@ function Login() {
       <div className="row">
         <form className="col s12">
           <div className="row">
-            <div className="input-field col s6">
+            <div className="input-field col offset-s2 s8">
               <i className="material-icons prefix">account_circle</i>
               <input id="icon_prefix" type="text" className="validate" />
               <label for="icon_prefix">First Name</label>
             </div>
           </div>
           <div className="row">
-            <div className="input-field col s6">
+            <div className="input-field col offset-s2 s8">
               <i className="material-icons prefix">filter_vintage</i>
               <input id="password" type="password" class="validate" />
               <label for="password">Password</label>
