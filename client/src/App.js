@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import { useEffect } from 'react'
 import axios from 'axios'
+import InsultResults from './containers/InsultResults/InsultResults';
 const Filter = require('bad-words'),
   filter = new Filter()
 filter.addWords('dicks', 'fuckton')
@@ -44,6 +45,7 @@ function App() {
             <Route path="/login" component={Login} />
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/registration" component={Registration} />
+            <Route path="/insultresults" component={InsultResults} />
           </Switch>
         <Footer />
         </Router>

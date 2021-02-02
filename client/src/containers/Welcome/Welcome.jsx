@@ -15,7 +15,7 @@ function Welcome () {
           width='480'
           height='264'
           frameBorder='0'
-          class='giphy-embed'
+          className='giphy-embed'
           allowFullScreen
         ></iframe>
         <iframe
@@ -23,7 +23,7 @@ function Welcome () {
           width='480'
           height='264'
           frameBorder='0'
-          class='giphy-embed'
+          className='giphy-embed'
           allowFullScreen
         ></iframe>
       </div>
