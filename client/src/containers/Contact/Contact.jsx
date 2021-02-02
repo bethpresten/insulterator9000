@@ -8,7 +8,7 @@ function Contact() {
         <form className="col s12">
           <div className="row">
             <div className="input-field col s8">
-              <i class="material-icons prefix">account_circle</i>
+              <i className="material-icons prefix">account_circle</i>
               <input
                 placeholder="Name"
                 id="name"
@@ -20,7 +20,7 @@ function Contact() {
           </div>
           <div className="row">
             <div className="input-field col s8">
-              <i class="material-icons prefix">email</i>
+              <i className="material-icons prefix">email</i>
               <input
                 type="email"
                 className="validate"
@@ -30,7 +30,7 @@ function Contact() {
               />
             </div>
             <div className="input-field col s8" id="message-row">
-              <i class="material-icons prefix">message</i>
+              <i className="material-icons prefix">message</i>
               <input
                 id="message"
                 type="text"

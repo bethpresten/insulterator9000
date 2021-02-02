@@ -16,9 +16,11 @@ filter.addWords('dicks', 'fuckton')
 
 function App() {
   useEffect(() => {
+
+//Get insult by user route    
     axios
       .get(
-        'https://cors-anywhere.herokuapp.com/http://insult.mattbas.org/api//insult.json?who=sponge+bob',
+        `api/insult/getbyuser/name`,
         {}
       )
       .then(function (response) {
@@ -43,8 +45,8 @@ function App() {
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/registration" component={Registration} />
           </Switch>
-        </Router>
         <Footer />
+        </Router>
       </div>
     </>
   )
