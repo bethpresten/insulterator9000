@@ -1,0 +1,12 @@
+h4 {
+  font-family: "Lora", serif;
+}
+
+button {
+  border-radius: 8px;
+  background-color: #74778a;
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  margin: 20px;
+  padding: 10px;
+}
