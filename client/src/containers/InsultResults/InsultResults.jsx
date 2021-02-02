@@ -24,7 +24,6 @@ function InsultResults () {
               </a>
             </div>
             <br />
-           
             <div className='row'>
               <a className='waves-effect waves-light btn-large hoverable'>
                 Go To Your Profile
