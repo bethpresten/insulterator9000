@@ -3,6 +3,9 @@ const mongoose = require('mongoose')
 const path = require('path')
 const axios = require('axios')
 const app = express()
+const Filter = require('bad-words'),
+  filter = new Filter()
+filter.addWords('dicks', 'fuckton', 'assload')
 
 const PORT = process.env.PORT || 3001
 

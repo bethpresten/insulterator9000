@@ -18,18 +18,18 @@ function App() {
   useEffect(() => {
 
 //Get insult by user route    
-    axios
-      .get(
-        `api/insult/getbyuser/name`,
-        {}
-      )
-      .then(function (response) {
-        console.log(`before: ${response.data.insult}`)
-        console.log(`after: ${filter.clean(response.data.insult)}`)
-      })
-      .catch(function (error) {
-        console.log(error)
-      })
+    // axios
+    //   .get(
+    //     `api/insult/getbyuser/name`,
+    //     {}
+    //   )
+    //   .then(function (response) {
+    //     console.log(`before: ${response.data.insult}`)
+    //     console.log(`after: ${filter.clean(response.data.insult)}`)
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error)
+    //   })
   }, [])
 
   return (
