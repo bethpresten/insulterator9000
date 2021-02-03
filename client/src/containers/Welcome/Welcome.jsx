@@ -1,9 +1,5 @@
 import React from "react";
 
-<<<<<<< HEAD
-function Welcome() {
-  return <div>This is the welcome page</div>;
-=======
 function Welcome () {
   return (
     <div>
@@ -37,7 +33,6 @@ function Welcome () {
       </div>
     </div>
   )
->>>>>>> 546d1eb0eb362283eb1197bd7b9d5b2cc83850fe
 }
 
 export default Welcome;
