@@ -4,7 +4,7 @@ import ProductForm from "../../components/UpdateProfileForm/UpdateProfileForm";
 import "./UpdateProfile.css";
 
 const UpdateProfile = () => {
-  const handleFormSubmit = (e, userData) => {
+  const handleUpdateProfile = (e, userData) => {
     e.preventDefault();
     axios
       .post("/api/user", userData)
@@ -15,6 +15,17 @@ const UpdateProfile = () => {
         console.log(err);
       });
   };
+  // const handleDeleteProfile = (e, userData) => {
+  //   e.preventDefault();
+  //   axios
+  //     .delete("/api/user", userData)
+  //     .then((response) => {
+  //       console.log(response.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
 
   return (
     <div className="container">
@@ -38,7 +49,8 @@ const UpdateProfile = () => {
           </div>
         </div>
         <div className="col sm8">
-          <ProductForm handleFormSubmit={handleFormSubmit} />
+          <ProductForm handleUpdateProfile={handleUpdateProfile} />
+          {/* <ProductForm handleDeleteProfile={handleDeleteProfile} /> */}
         </div>
       </div>
     </div>

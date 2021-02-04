@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import DeleteProfileButton from "../DeleteProfileButton/DeleteProfileButton";
 
-const UpdateProfileForm = ({ handleFormSubmit }) => {
+const UpdateProfileForm = ({ handleUpdateProfile, handleDeleteProfile }) => {
   const [occupation, setOccupation] = useState("");
   const [sports, setSports] = useState("");
   const [hobbies, setHobbies] = useState("");
@@ -10,7 +11,7 @@ const UpdateProfileForm = ({ handleFormSubmit }) => {
       <form
         className="col s12"
         onSubmit={(e) => {
-          handleFormSubmit(e, {
+          handleUpdateProfile(e, {
             occupation,
             sports,
             hobbies,
@@ -64,71 +65,15 @@ const UpdateProfileForm = ({ handleFormSubmit }) => {
           </div>
         </div>
 
-        {/* <div className="row">
-          <div className="input-field col s12">
-            <input
-              placeholder="Product Image"
-              id="imageURL"
-              type="text"
-              name="imageURL"
-              value={imageURL}
-              onChange={(e) => {
-                setImageURL(e.target.value);
-              }}
-            />
-            <label htmlFor="imageURL">Product Image</label>
-          </div>
-        </div>
-        <div className="row">
-          <div className="input-field col s12">
-            <input
-              placeholder="Product Category"
-              id="category"
-              type="text"
-              name="category"
-              value={category}
-              onChange={(e) => {
-                setCategory(e.target.value);
-              }}
-            />
-            <label htmlFor="category">Product Category</label>
-          </div>
-        </div>
-        <div className="row">
-          <div className="input-field col s6">
-            <input
-              placeholder="Product Quantity"
-              id="quantity"
-              type="number"
-              name="quantity"
-              value={quantity}
-              onChange={(e) => {
-                setQuantity(e.target.value);
-              }}
-            />
-            <label htmlFor="quantity">Product Quantity</label>
-          </div>
-          <div className="input-field col s6">
-            <label>
-              <input
-                type="checkbox"
-                checked={featured}
-                onChange={() => {
-                  setFeatured(!featured);
-                }}
-              />
-              <span>Featured?</span>
-            </label>
-          </div>
-        </div> */}
         <div className="row">
           <div className="col s12">
-            <button className="waves-effect waves-light btn hoverable">
+            <button
+              className="waves-effect waves-light btn hoverable"
+              onClick={handleUpdateProfile}
+            >
               Update Profile
             </button>
-            <button className="waves-effect waves-light btn hoverable">
-              Delete Profile Profile
-            </button>
+            <DeleteProfileButton handleDeleteProfile={handleDeleteProfile} />
           </div>
         </div>
       </form>
