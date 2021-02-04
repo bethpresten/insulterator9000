@@ -6,6 +6,18 @@ const UpdateProfileForm = ({ handleUpdateProfile, handleDeleteProfile }) => {
   const [sport, setSport] = useState("");
   const [hobby, setHobby] = useState("");
 
+  const handleDeleteProfile = (e, userData) => {
+    e.preventDefault();
+    axios
+      .delete("/api/user/:id", userData)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
       <form

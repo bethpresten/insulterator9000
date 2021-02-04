@@ -7,7 +7,7 @@ const UpdateProfile = () => {
   const handleUpdateProfile = (e, userData) => {
     e.preventDefault();
     axios
-      .post("/api/user", userData)
+      .post("/api/user/:id", userData)
       .then((response) => {
         console.log(response.data);
       })
@@ -15,17 +15,6 @@ const UpdateProfile = () => {
         console.log(err);
       });
   };
-  // const handleDeleteProfile = (e, userData) => {
-  //   e.preventDefault();
-  //   axios
-  //     .delete("/api/user", userData)
-  //     .then((response) => {
-  //       console.log(response.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
 
   return (
     <div className="container">
