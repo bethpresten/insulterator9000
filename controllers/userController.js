@@ -1,21 +1,33 @@
-import userModel from "../models/models"
-// import vm from "v-response"
-exports.createUser = (res, req, next) =>{
-    let user_body = req.body;
-    const new_user = new userModel(user_body);
-    new_user.save()
-    .then(saved =>{
-        if (!saved){
-            return res.status(400)
-            .json(vm.ApiResponse(false, 400, "unable to save user please try again"))
-            
-        }
-        if(saved){
-            return res.status(201)
-            .json(vm.ApiResponse(true, 201, "user successfully saved", saved))
-        }
-    }).catch (error => {
-        return res.status(500)
-        .json(vm.ApiResponse(false, 500, "error occured", undefined, error))
-    })
+const db = require("../models/user");
+
+module.exports = {
+  findAll: function(req, res) {
+    db.User.find(req.query)
+      .then(dbModel => {
+       
+        res.json(dbModel);
+      })
+      .catch(err => res.status(422).json(err));
+  },
+  findById: function(req, res) {
+    db.User.findById(req.params.id)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  create: function(req, res) {
+    db.User.create(req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  update: function(req, res) {
+    db.User.findOneAndUpdate({ _id: req.params.id }, req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  remove: function(req, res) {
+    db.User.findById({ _id: req.params.id })
+      .then(dbModel => dbModel.remove())
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  }
 };
