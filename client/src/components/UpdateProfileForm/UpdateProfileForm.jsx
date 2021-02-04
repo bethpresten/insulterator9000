@@ -3,8 +3,8 @@ import DeleteProfileButton from "../DeleteProfileButton/DeleteProfileButton";
 
 const UpdateProfileForm = ({ handleUpdateProfile, handleDeleteProfile }) => {
   const [occupation, setOccupation] = useState("");
-  const [sports, setSports] = useState("");
-  const [hobbies, setHobbies] = useState("");
+  const [sport, setSport] = useState("");
+  const [hobby, setHobby] = useState("");
 
   return (
     <>
@@ -13,8 +13,8 @@ const UpdateProfileForm = ({ handleUpdateProfile, handleDeleteProfile }) => {
         onSubmit={(e) => {
           handleUpdateProfile(e, {
             occupation,
-            sports,
-            hobbies,
+            sport,
+            hobby,
           });
         }}
       >
@@ -37,31 +37,31 @@ const UpdateProfileForm = ({ handleUpdateProfile, handleDeleteProfile }) => {
           <div className="input-field col s12">
             <input
               placeholder="Favorite Sports Team"
-              id="sports"
+              id="sport"
               type="text"
-              name="sports"
-              value={sports}
+              name="sport"
+              value={sport}
               onChange={(e) => {
-                setSports(e.target.value);
+                setSport(e.target.value);
               }}
             />
-            <label htmlFor="sports">Favorite Sports Team</label>
+            <label htmlFor="sport">Favorite Sports Team</label>
           </div>
         </div>
 
         <div className="row">
           <div className="input-field col s12">
             <input
-              placeholder="Hobbies"
-              id="hobbies"
+              placeholder="Favorite Hobby"
+              id="hobby"
               type="text"
-              name="hobbies"
-              value={hobbies}
+              name="hobby"
+              value={hobby}
               onChange={(e) => {
-                setHobbies(e.target.value);
+                setHobby(e.target.value);
               }}
             />
-            <label htmlFor="hobbies">Hobbies</label>
+            <label htmlFor="hobby">Favorite Hobby</label>
           </div>
         </div>
 

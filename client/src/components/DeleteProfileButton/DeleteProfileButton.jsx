@@ -1,10 +1,11 @@
 import React from "react";
 import axios from "axios";
+import "./DeleteProfileButton.css";
 
 const handleDeleteProfile = (e, userData) => {
   e.preventDefault();
   axios
-    .delete("/api/user", userData)
+    .delete("/api/user/:id", userData)
     .then((response) => {
       console.log(response.data);
     })
@@ -16,8 +17,9 @@ const handleDeleteProfile = (e, userData) => {
 function DeleteProfileButton() {
   return (
     <button
-      className="waves-effect waves-light btn hoverable"
+      className="btn hoverable"
       onClick={handleDeleteProfile}
+      id="delete-button"
     >
       Delete Profile Profile
     </button>

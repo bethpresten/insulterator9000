@@ -37,10 +37,10 @@ const UpdateProfile = () => {
                 <h5>Name</h5>
               </div>
               <div className="card-content">
-                <h5>Hobbies</h5>
+                <h5>Favorite Hobby</h5>
               </div>
               <div className="card-content">
-                <h5>Favorite Sports Teams</h5>
+                <h5>Favorite Sports Team</h5>
               </div>
               <div className="card-content">
                 <h5>Occupation</h5>
