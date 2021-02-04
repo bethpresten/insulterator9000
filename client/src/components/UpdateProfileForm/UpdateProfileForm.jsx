@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 
 const UpdateProfileForm = ({ handleFormSubmit }) => {
-  const [title, setTitle] = useState("");
-  const [price, setPrice] = useState("");
-  const [description, setDescription] = useState("");
-  const [imageURL, setImageURL] = useState("");
-  const [category, setCategory] = useState("");
-  const [quantity, setQuantity] = useState("");
-  const [featured, setFeatured] = useState(false);
+  const [occupation, setOccupation] = useState("");
+  const [sports, setSports] = useState("");
+  const [hobbies, setHobbies] = useState("");
 
   return (
     <>
@@ -15,59 +11,59 @@ const UpdateProfileForm = ({ handleFormSubmit }) => {
         className="col s12"
         onSubmit={(e) => {
           handleFormSubmit(e, {
-            title,
-            price,
-            description,
-            imageURL,
-            category,
-            quantity,
-            featured,
+            occupation,
+            sports,
+            hobbies,
           });
         }}
       >
         <div className="row">
-          <div className="input-field col s6">
+          <div className="input-field col s12">
             <input
-              placeholder="Product Title"
+              placeholder="Occupation"
               id="title"
               type="text"
-              name="title"
-              value={title}
+              name="occupation"
+              value={occupation}
               onChange={(e) => {
-                setTitle(e.target.value);
+                setOccupation(e.target.value);
               }}
             />
-            <label htmlFor="title">Occupation</label>
-          </div>
-          <div className="input-field col s6">
-            <input
-              placeholder="Product Price"
-              id="price"
-              type="text"
-              name="price"
-              value={price}
-              onChange={(e) => {
-                setPrice(e.target.value);
-              }}
-            />
-            <label htmlFor="price">Favorite Sports Team</label>
+            <label htmlFor="occupation">Occupation</label>
           </div>
         </div>
         <div className="row">
           <div className="input-field col s12">
             <input
-              placeholder="Product Description"
-              id="description"
+              placeholder="Favorite Sports Team"
+              id="sports"
               type="text"
-              name="description"
-              value={description}
+              name="sports"
+              value={sports}
               onChange={(e) => {
-                setDescription(e.target.value);
+                setSports(e.target.value);
               }}
             />
-            <label htmlFor="description">Hobbies</label>
+            <label htmlFor="sports">Favorite Sports Team</label>
           </div>
         </div>
+
+        <div className="row">
+          <div className="input-field col s12">
+            <input
+              placeholder="Hobbies"
+              id="hobbies"
+              type="text"
+              name="hobbies"
+              value={hobbies}
+              onChange={(e) => {
+                setHobbies(e.target.value);
+              }}
+            />
+            <label htmlFor="hobbies">Hobbies</label>
+          </div>
+        </div>
+
         {/* <div className="row">
           <div className="input-field col s12">
             <input

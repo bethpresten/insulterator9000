@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import ProductForm from "../../components/UpdateProfileForm/UpdateProfileForm";
+import "./UpdateProfile.css";
 
 const UpdateProfile = () => {
   const handleFormSubmit = (e, userData) => {
@@ -18,7 +19,7 @@ const UpdateProfile = () => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col s3">
+        <div className="col s4">
           <div className="card horizontal hoverable">
             <div className="card-stacked">
               <div className="card-content">
@@ -36,7 +37,7 @@ const UpdateProfile = () => {
             </div>
           </div>
         </div>
-        <div className="col sm9">
+        <div className="col sm8">
           <ProductForm handleFormSubmit={handleFormSubmit} />
         </div>
       </div>

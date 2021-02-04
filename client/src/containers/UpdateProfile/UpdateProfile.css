@@ -1,9 +1,13 @@
 .card {
-  width: 200px;
   border-radius: 10px;
 }
 
 ul {
   font-size: 20px;
   font-family: "Lora", serif;
+}
+
+.container {
+  padding: 20px;
+  margin: 20px;
 }
