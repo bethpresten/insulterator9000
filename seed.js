@@ -1,5 +1,32 @@
-import mongoose from ("mongoose")
+const mongoose = require("mongoose");
+const User = require("./models/user")
 
+const data = [
+    {
+        // "_id": "",
+        "firstname": "Billy",
+        "lastname": "Bailey",
+
+        "password": "billybob1",
+        "email": "billybob@billy.com",
+        "hobby": "fishing",
+        "sport": "football",
+        "occupation": "welder",
+        "lastLogin": "10/10/2020"
+    },
+    {
+        // "_id": "",
+        "firstname": "Jeremy",
+        "lastname": "James",
+
+        "password": "JeremyJames111",
+        "email": "Jeremy@james.com",
+        "hobby": "wine tasting",
+        "sport": "soccer",
+        "occupation": "lawyer",
+        "lastLogin": "12/05/2020"
+    }
+]
 mongoose.connect(
     process.env.MONGODB_URI || 'mongodb://localhost/insulterator9000',
     {
@@ -7,82 +34,16 @@ mongoose.connect(
         useUnifiedTopology: true,
         useFindAndModify: false,
         useCreateIndex: true
-    },
-    mongoose.loadModels(modelPaths[
-        "./models/models"
-    ]),
-    mongoose.clearModels(['models']),
-    mongoose.populateModels(data, function (err, done) {
-        if (err) {
-            return console.log("seed error", err);
-        }
-        if (done) {
-            return console.log("seed done", done);
-        }
-        mongoose.disconnect();
-
-    })
-
-)
-
-const connection = mongoose.connection
-
-connection.on('connected', () => {
-    console.log('Mongoose successfully connected!')
-})
-
-connection.on('error', err => {
-    console.log('Mongoose connection error: ', err)
-})
-
-const data = [
-    {
-        'model': 'user',
-        'userData': [
-            {
-                "_id": "",
-                "username": "BillyBobBailey",
-                "password": "billybob1",
-                "email": "billybob@billy.com",
-                "hobbies": [
-                    "fishing",
-                    "hiking",
-                    "hunting"
-                ],
-                "sports": [
-                    "football",
-                    "baseball",
-                    "basketball"
-                ],
-                "occupations": [
-                    "welder",
-                    "warehouse worker",
-                    "mechanic"
-                ],
-                "lastLogin": "10/10/2020"
-            },
-            {
-                "_id": "",
-                "username": "JeremyJames",
-                "password": "JeremyJames111",
-                "email": "Jeremy@james.com",
-                "hobbies": [
-                    "wine tasting",
-                    "art class",
-                    "swimming"
-                ],
-                "sports": [
-                    "soccer",
-                    "lacrosse",
-                    "polo"
-                ],
-                "occupations": [
-                    "lawyer",
-                    "doctor",
-                    "attorney"
-                ],
-                "lastLogin": ""
-            }
-        ]
     }
-]
+);
+
+User.deleteMany({}).then(() => {
+    User.collection.insertMany(data).then(result => {
+        console.log(result);
+        console.log(result.result.n + " records inserted!");
+        process.exit(0);
+    }).catch(err => {
+        console.log(err);
+        process.exit(1);
+    })
+})

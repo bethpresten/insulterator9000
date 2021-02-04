@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 function Welcome () {
   return (
@@ -35,4 +35,4 @@ function Welcome () {
   )
 }
 
-export default Welcome
+export default Welcome;
