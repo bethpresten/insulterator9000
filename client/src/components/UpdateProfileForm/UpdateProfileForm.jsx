@@ -1,27 +1,16 @@
 import React, { useState } from "react";
-import DeleteProfileButton from "../DeleteProfileButton/DeleteProfileButton";
+import "./UpdateProfileForm.css";
+// import DeleteProfileButton from "../DeleteProfileButton/DeleteProfileButton";
 
-const UpdateProfileForm = ({ handleUpdateProfile, handleDeleteProfile }) => {
+const UpdateProfileForm = ({ handleUpdateProfile }) => {
   const [occupation, setOccupation] = useState("");
   const [sport, setSport] = useState("");
   const [hobby, setHobby] = useState("");
 
-  const handleDeleteProfile = (e, userData) => {
-    e.preventDefault();
-    axios
-      .delete("/api/user/:id", userData)
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
   return (
     <>
       <form
-        className="col s12"
+        className="col s9"
         onSubmit={(e) => {
           handleUpdateProfile(e, {
             occupation,
@@ -85,7 +74,6 @@ const UpdateProfileForm = ({ handleUpdateProfile, handleDeleteProfile }) => {
             >
               Update Profile
             </button>
-            <DeleteProfileButton handleDeleteProfile={handleDeleteProfile} />
           </div>
         </div>
       </form>
