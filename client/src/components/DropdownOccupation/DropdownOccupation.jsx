@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import M from "materialize-css";
 import "./DropdownOccupation.css";
-import "../DropdownMenuChoices/DropdownMenuChoices";
-// import DropdownMenuChoices from "../DropdownMenuChoices/DropdownMenuChoices";
 
 function DropdownOccupation({ category, target, listItem }) {
   const state = {
