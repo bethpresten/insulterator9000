@@ -28,7 +28,7 @@ const UpdateProfile = () => {
   //     });
   // };
   return (
-    <div className="container">
+    <div className="container center-align">
       <div className="row">
         <div className="col s3">
           <div className="card horizontal hoverable">
