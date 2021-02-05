@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import M from "materialize-css";
 // import "./DropdownOccupation.css";
-import "../DropdownMenuChoices/DropdownMenuChoices";
-// import DropdownMenuChoices from "../DropdownMenuChoices/DropdownMenuChoices";
 
 function DropdownHobbies({ category, target, hobbyChoice }) {
   const [hobby, setHobby] = useState();

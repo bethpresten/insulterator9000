@@ -21,7 +21,7 @@ function DeleteProfileButton() {
       onClick={handleDeleteProfile}
       id="delete-button"
     >
-      Delete Profile Profile
+      Delete Insulterator9000 Profile
     </button>
   );
 }

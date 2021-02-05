@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import DeleteProfileButton from "../DeleteProfileButton/DeleteProfileButton";
 import DropdownOccupation from "../DropdownOccupation/DropdownOccupation";
-import DropdownSports from "../DropdownOccupation/DropdownOccupation";
+import DropdownSports from "../DropdownSports/DropdownSports";
 import DropdownHobbies from "../DropdownHobbies.jsx/DropdownHobbies";
 
 const UpdateProfileForm = ({ handleUpdateProfile }) => {
@@ -61,18 +61,17 @@ const UpdateProfileForm = ({ handleUpdateProfile }) => {
             }}
           />
         </div>
-      </form>
-
-      <div className="row">
-        <div className="col s12">
-          <button
-            className="waves-effect waves-light btn hoverable"
-            onClick={handleUpdateProfile}
-          >
-            Update Profile
-          </button>
+        <div className="row">
+          <div className="col s12">
+            <button
+              className="waves-effect waves-light btn hoverable"
+              onClick={handleUpdateProfile}
+            >
+              Update Profile
+            </button>
+          </div>
         </div>
-      </div>
+      </form>
     </>
   );
 };
