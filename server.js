@@ -7,14 +7,10 @@ const Filter = require('bad-words'),
   filter = new Filter()
 filter.addWords('dicks', 'fuckton', 'assload')
 
-const routes = require("./routes");
-
 const PORT = process.env.PORT || 3001
-
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
-app.use(routes);
 app.use(express.static('client/build'))
 
 mongoose.connect(
@@ -39,8 +35,10 @@ connection.on('error', err => {
 
 //api routes
 
+const UserController = require('./controllers/userController');
+
 axios
-  .get("https://insult.mattbas.org/api//insult.json?who=sponge+bob")
+  .get('https://insult.mattbas.org/api//insult.json?who=sponge+bob')
   .then(function (response) {
     console.log(`before: ${response.data.insult}`)
     console.log(`after: ${filter.clean(response.data.insult)}`)
@@ -49,15 +47,19 @@ axios
     console.log(error)
   })
 
-//view routes
+app.get('/api/config', (req, res) => {
+  res.json({
+    success: true
+  })
+})
 
 
+app.use('/api/users', UserController)
 
-// app.get('/:id', (req, res) => {
-//   res.json({
-//     success: true
-//   })
-// })
+
+app.get('*', (req,res) => {
+  res.sendFile(path.join(_dirname, 'client/build/index.html'))
+})
 
 // app.get('/', (req, res) => {
 //   res.sendFile(path.join(__dirname, 'client/build/index.html'))
