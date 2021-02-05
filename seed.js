@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const User = require("./models/user")
+const users = require("./models/user")
 
 const data = [
     {
@@ -37,8 +37,8 @@ mongoose.connect(
     }
 );
 
-User.deleteMany({}).then(() => {
-    User.collection.insertMany(data).then(result => {
+users.deleteMany({}).then(() => {
+    users.collection.insertMany(data).then(result => {
         console.log(result);
         console.log(result.result.n + " records inserted!");
         process.exit(0);
