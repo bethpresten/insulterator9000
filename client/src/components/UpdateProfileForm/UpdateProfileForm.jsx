@@ -23,7 +23,7 @@ const UpdateProfileForm = ({ handleUpdateProfile }) => {
           <UpdateDropdown
             category="Occupation"
             target="dropdown1"
-            listItem={("teacher", "lawyer", "doctor", "developer", "sales")}
+            // listItem={("teacher", "lawyer", "doctor", "developer", "sales")}
             type="text"
             name="occupation"
             value={occupation}

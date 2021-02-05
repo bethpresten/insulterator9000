@@ -4,3 +4,7 @@
   color: grey;
   border-radius: 10px;
 }
+
+.dropdown-content {
+  align-items: center;
+}

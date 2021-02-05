@@ -4,6 +4,9 @@ import "./UpdateDropdown.css";
 
 function UpdateDropdown({ category, target, listItem }) {
   //   const [state, setState] = useState();
+  const state = {
+    listItems: ["Teacher", "Lawyer", "Developer", "Sales", "Realtor"],
+  };
 
   useEffect(() => {
     let elems = document.querySelectorAll(".dropdown-trigger");
@@ -17,7 +20,9 @@ function UpdateDropdown({ category, target, listItem }) {
         {category}
       </a>
       <ul id={target} className="dropdown-content">
-        <li>{listItem}</li>
+        {state.listItems.map((listItem) => (
+          <li>{listItem}</li>
+        ))}
       </ul>
     </div>
   );
