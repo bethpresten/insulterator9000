@@ -5,6 +5,6 @@
   border-radius: 10px;
 }
 
-.dropdown-content {
-  align-items: center;
+ul {
+  text-align: center;
 }

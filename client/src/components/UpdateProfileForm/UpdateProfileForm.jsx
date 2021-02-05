@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 // import DeleteProfileButton from "../DeleteProfileButton/DeleteProfileButton";
-import UpdateDropdown from "../../components/UpdateDropdown/UpdateDropdown";
+import DropdownOccupation from "../DropdownOccupation/DropdownOccupation";
+import DropdownSports from "../DropdownOccupation/DropdownOccupation";
+import DropdownHobbies from "../DropdownHobbies.jsx/DropdownHobbies";
 
 const UpdateProfileForm = ({ handleUpdateProfile }) => {
   const [occupation, setOccupation] = useState("");
@@ -20,10 +22,10 @@ const UpdateProfileForm = ({ handleUpdateProfile }) => {
         }}
       >
         <div className="col s4">
-          <UpdateDropdown
+          <DropdownOccupation
             category="Occupation"
             target="dropdown1"
-            // listItem={("teacher", "lawyer", "doctor", "developer", "sales")}
+            // choices={occupationChoices}
             type="text"
             name="occupation"
             value={occupation}
@@ -33,10 +35,10 @@ const UpdateProfileForm = ({ handleUpdateProfile }) => {
           />
         </div>
         <div className="col s4">
-          <UpdateDropdown
+          <DropdownSports
             category="Sports Team"
             target="dropdown2"
-            // id="sport"
+            // choices={sportChoices}
             type="text"
             name="sport"
             value={sport}
@@ -46,9 +48,10 @@ const UpdateProfileForm = ({ handleUpdateProfile }) => {
           />
         </div>
         <div className="col s4">
-          <UpdateDropdown
+          <DropdownHobbies
             category="Hobby"
             target="dropdown3"
+            // choices={hobbyChoices}
             // id="hobby"
             type="text"
             name="hobby"

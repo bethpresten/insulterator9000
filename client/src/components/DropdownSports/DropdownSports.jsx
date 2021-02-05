@@ -1,11 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import M from "materialize-css";
-import "./UpdateDropdown.css";
+// import "./DropdownOccupation.css";
 
-function UpdateDropdown({ category, target, listItem }) {
-  //   const [state, setState] = useState();
+function DropdownSports({ category, target, sportChoice }) {
+  const [sport, setSport] = useState("");
+
   const state = {
-    listItems: ["Teacher", "Lawyer", "Developer", "Sales", "Realtor"],
+    sportChoices: ["New England Patriots", "Atlanta United", "Atlanta Falcons"],
   };
 
   useEffect(() => {
@@ -20,12 +21,12 @@ function UpdateDropdown({ category, target, listItem }) {
         {category}
       </a>
       <ul id={target} className="dropdown-content">
-        {state.listItems.map((listItem) => (
-          <li>{listItem}</li>
+        {state.sportChoices.map((sportChoice) => (
+          <li>{sportChoice}</li>
         ))}
       </ul>
     </div>
   );
 }
 
-export default UpdateDropdown;
+export default DropdownSports;
