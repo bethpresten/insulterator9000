@@ -6,6 +6,7 @@ const app = express()
 const Filter = require('bad-words'),
   filter = new Filter()
 filter.addWords('dicks', 'fuckton', 'assload')
+const activeUser = "Timmy"
 
 const PORT = process.env.PORT || 3001
 
@@ -38,7 +39,7 @@ connection.on('error', err => {
 const UserController = require('./controllers/userController');
 
 axios
-  .get('https://insult.mattbas.org/api//insult.json?who=sponge+bob')
+  .get(`https://insult.mattbas.org/api//insult.json?who=${activeUser}`)
   .then(function (response) {
     console.log(`before: ${response.data.insult}`)
     console.log(`after: ${filter.clean(response.data.insult)}`)
