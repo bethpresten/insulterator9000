@@ -30,7 +30,7 @@ router.get('/get-user', (req, res) => {
 router.put('/update-user', (req, res) => {
   User.findOneAndUpdate(
     { _id: '601c8bc128788e2d19d28463' },
-    { firstname: 'Billy' },
+    { firstname: 'James' },
     function (err, result) {
       if (err) {
         res.send(err)
