@@ -10,7 +10,7 @@ const data = [
         "password": "billybob1",
         "email": "billybob@billy.com",
         "hobby": "fishing",
-        "sport": "football",
+        "sport": "Alabama Crimson Tide",
         "occupation": "welder",
         "lastLogin": "10/10/2020"
     },
@@ -22,7 +22,7 @@ const data = [
         "password": "JeremyJames111",
         "email": "Jeremy@james.com",
         "hobby": "wine tasting",
-        "sport": "soccer",
+        "sport": "Atlanta United",
         "occupation": "lawyer",
         "lastLogin": "12/05/2020"
     }
