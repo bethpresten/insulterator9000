@@ -71,7 +71,7 @@ axios
     console.log(error)
   })
 axios
-  .get(`https://insult.mattbas.org/api/insult.json?template=So+you%27re+a+${jobTitle}%3F+I+didn%27t+know+you+were+a+%3Cadjective%3E+%3Camount%3E+of+%3Canimal%3E+%3Canimal_part%3E`)
+  .get(`https://insult.mattbas.org/api/insult.json?template=So+you%27re+a+${jobTitle}%3F+I+didn%27t+know+you+were+%3Carticle+target%3Dadj1%3E+%3Cadjective+id%3Dadj1%3E+%3Camount%3E+of+%3Canimal%3E+%3Canimal_part%3E`)
   .then(function (response) {
     console.log(`before: ${response.data.insult}`)
     console.log(`after: ${filter.clean(response.data.insult)}`)
