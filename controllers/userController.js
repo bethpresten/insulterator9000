@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const User = require('../models/user')
-const id = '601c8bc128788e2d19d28463'
+const id = "601eed4c7b88188b4d8aa476"
 
 //get all users
 router.get('/', (req, res) => {
