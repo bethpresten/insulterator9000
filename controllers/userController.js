@@ -52,4 +52,15 @@ router.post('/create-user', (req, res) => {
   })
 })
 
+//delete user
+router.delete('/delete-user', (req, res) => {
+  User.deleteOne({ firstname: 'Steve' }, function (err, result) {
+    if (err) {
+      res.send(err)
+    } else {
+      res.json(result)
+    }
+  })
+})
+
 module.exports = router
