@@ -16,9 +16,17 @@ const Filter = require('bad-words'),
 filter.addWords('dicks', 'fuckton')
 
 function App() {
+<<<<<<< HEAD
   useEffect(() => {
 console.log('something needs to happen in App.js...')
   }, [])
+=======
+  //   useEffect(){
+
+  //   }, []
+  // }
+
+>>>>>>> 6e34384476f30992c620845ee1f1b3bc2feba490
 
   return (
     <>

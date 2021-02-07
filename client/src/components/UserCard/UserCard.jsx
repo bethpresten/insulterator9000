@@ -3,7 +3,7 @@ import axios from 'axios'
 const email = "billybob@billy.com" // this will come from user registration
 
 const UserCard = () => {
-  const [data, setData] = useState('')
+  const [data, setData] = useState("");
 
   const getData = () => {
     axios
@@ -12,36 +12,37 @@ const UserCard = () => {
         console.log(response.data)
         setData(response.data)
       })
-      .catch(err => {
-        console.log(err)
-      })
-  }
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   useEffect(() => {
-    getData()
-  }, [])
+    getData();
+  }, []);
 
   return (
     <div>
-      <div className='card horizontal hoverable'>
-        <div className='card-stacked'>
-          <div className='card-content'>
+      <div className="card horizontal hoverable">
+        <div className="card-stacked">
+          <div className="card-content">
             <h5>
-              Name: {data.firstname}{data.lastname}
+              Name: {data.firstname}
+              {data.lastname}
             </h5>
           </div>
-          <div className='card-content'>
+          <div className="card-content">
             <h5>Hobby: {data.hobby}</h5>
           </div>
-          <div className='card-content'>
-            <h5>Favorite Sports Team: {data.sportsteam}</h5>
+          <div className="card-content">
+            <h5>Favorite Sports Team: {data.sport}</h5>
           </div>
-          <div className='card-content'>
+          <div className="card-content">
             <h5>Occupation: {data.occupation}</h5>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default UserCard
+export default UserCard;
