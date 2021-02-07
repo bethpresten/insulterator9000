@@ -6,16 +6,18 @@ const app = express()
 const Filter = require('bad-words'),
   filter = new Filter()
 filter.addWords('dicks', 'fuckton', 'fuckload', 'assload')
-
 const sportsTeam = "Falcons";
 const hobbyType = "fishing";
 const jobTitle = "lawyer"
+
 const PORT = process.env.PORT || 3001
 
+//middleware
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(express.static('client/build'))
 
+//mongoose connection
 mongoose.connect(
   process.env.MONGODB_URI || 'mongodb://localhost/insulterator9000',
   {
@@ -60,6 +62,7 @@ axios
   .catch(function (error) {
     console.log(error)
   })
+
 //occupation insults
 axios
   .get(`https://insult.mattbas.org/api/insult.json?template=People+who+are+${jobTitle}s+secretly+eat+%3Canimal%3E+%3Canimal_part%3E`)
@@ -79,6 +82,7 @@ axios
   .catch(function (error) {
     console.log(error)
   })
+
 //hobby insults
 axios
   .get(`https://insult.mattbas.org/api/insult.json?template=People+who+like+${hobbyType}+really+like+%3Canimal%3E+%3Canimal_part%3E+because+they%27re+%3Cadjective%3E`)
@@ -99,18 +103,14 @@ axios
     console.log(error)
   })
 
-
-
-
-
-
+//test route
 app.get('/api/config', (req, res) => {
   res.json({
     success: true
   })
 })
 
-
+//set all routes prefix to '/api/users'
 app.use('/api/users', UserController)
 
 //catch all view route
