@@ -10,18 +10,23 @@ import UpdateProfile from "./containers/UpdateProfile/UpdateProfile";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import { useEffect } from 'react'
-import axios from 'axios'
 import InsultResults from './containers/InsultResults/InsultResults';
 const Filter = require('bad-words'),
   filter = new Filter()
 filter.addWords('dicks', 'fuckton')
 
 function App() {
+<<<<<<< HEAD
+  useEffect(() => {
+console.log('something needs to happen in App.js...')
+  }, [])
+=======
   //   useEffect(){
 
   //   }, []
   // }
 
+>>>>>>> 6e34384476f30992c620845ee1f1b3bc2feba490
 
   return (
     <>
