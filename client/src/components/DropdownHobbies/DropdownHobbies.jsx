@@ -3,7 +3,7 @@ import M from "materialize-css";
 // import "./DropdownOccupation.css";
 
 function DropdownHobbies({ category, target, hobbyChoice }) {
-  const [hobby, setHobby] = useState();
+  // const [hobby, setHobby] = useState("");
   const state = {
     hobbyChoices: ["Running", "Peloton", "Comic Books"],
   };
@@ -20,8 +20,8 @@ function DropdownHobbies({ category, target, hobbyChoice }) {
         {category}
       </a>
       <ul id={target} className="dropdown-content">
-        {state.hobbyChoices.map((hobbyChoice) => (
-          <li>{hobbyChoice}</li>
+        {state.hobbyChoices.map((hobby) => (
+          <li>{hobby}</li>
         ))}
       </ul>
     </div>

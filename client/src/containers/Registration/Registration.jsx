@@ -116,9 +116,39 @@ function Registration({ handleFormSubmit }) {
           </div>
           <div className="row">
             <div class="input-field">
-              <DropdownOccupation />
-              <DropdownSports />
-              <DropdownHobbies />
+              <DropdownOccupation
+                id="occupation-dropdown"
+                category="Occupation"
+                target="dropdown1"
+                type="text"
+                name="occupation"
+                value={occupation}
+                onChange={(e) => {
+                  setOccupation(e.target.value);
+                }}
+              />
+              <DropdownSports
+                id="sports-dropdown"
+                category="Sports Team"
+                target="dropdown2"
+                type="text"
+                name="sport"
+                value={sport}
+                onChange={(e) => {
+                  setSport(e.target.value);
+                }}
+              />
+              <DropdownHobbies
+                id="hobby-dropdown"
+                category="Hobby"
+                target="dropdown3"
+                type="text"
+                name="hobby"
+                value={hobby}
+                onChange={(e) => {
+                  setHobby(e.target.value);
+                }}
+              />
             </div>
           </div>
           <button
@@ -126,6 +156,8 @@ function Registration({ handleFormSubmit }) {
             type="submit"
             name="action"
             id="registration-button"
+            onSubmit
+            handleCreateProfile={handleCreateProfile}
           >
             Finish Registration
             <i className="material-icons right">send</i>

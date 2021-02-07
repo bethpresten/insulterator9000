@@ -3,7 +3,10 @@ h1 {
   /* font-family: "Lato", sans-serif; */
 }
 
-#registration-button {
+#registration-button,
+#occupation-dropdown,
+#sports-dropdown,
+#hobby-dropdown {
   font-family: "Lato", sans-serif;
   /* background-color: blue; */
   margin-top: 10px;

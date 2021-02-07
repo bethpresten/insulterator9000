@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import M from "materialize-css";
 // import "./DropdownOccupation.css";
 
-function DropdownSports({ category, target, sportChoice }) {
-  const [sport, setSport] = useState("");
+function DropdownSports({ category, target }) {
+  // const [sport, setSport] = useState("");
 
   const state = {
     sportChoices: ["New England Patriots", "Atlanta United", "Atlanta Falcons"],
@@ -17,12 +17,12 @@ function DropdownSports({ category, target, sportChoice }) {
 
   return (
     <div className="input-field col s12">
-      <a className="dropdown-trigger btn" data-target={target}>
+      <a className="dropdown-trigger btn" data-target={target} id="select">
         {category}
       </a>
       <ul id={target} className="dropdown-content">
-        {state.sportChoices.map((sportChoice) => (
-          <li>{sportChoice}</li>
+        {state.sportChoices.map((sport) => (
+          <li>{sport}</li>
         ))}
       </ul>
     </div>
