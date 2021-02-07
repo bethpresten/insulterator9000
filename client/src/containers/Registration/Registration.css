@@ -3,6 +3,9 @@ h1 {
   /* font-family: "Lato", sans-serif; */
 }
 
-button {
+#registration-button {
   font-family: "Lato", sans-serif;
+  /* background-color: blue; */
+  margin-top: 10px;
+  width: 30%;
 }
