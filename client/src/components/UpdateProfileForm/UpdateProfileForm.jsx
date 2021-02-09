@@ -40,7 +40,7 @@ const UpdateProfileForm = ({ handleUpdateProfile }) => {
           <div className="col s12">
             <button
               className="waves-effect waves-light btn hoverable"
-              onClick={handleUpdateProfile}
+              // onClick={handleUpdateProfile}
             >
               Update Profile
             </button>
