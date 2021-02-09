@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, Link } from "react-router-dom";
 import "./Registration.css";
 import axios from "axios";
 
-function Registration({ handleFormSubmit }) {
+function Registration() {
   const [firstname, setFirstName] = useState("");
-  const [lastname, setLastname] = useState("");
+  const [lastname, setLastName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [occupation, setOccupation] = useState("");
@@ -18,7 +18,7 @@ function Registration({ handleFormSubmit }) {
     console.log(id);
     if (id) {
       axios
-        .get(`/api/users/${id}`)
+        .put(`/api/users/${id}`)
         .then((response) => {
           console.log(response.data);
           const {
@@ -31,7 +31,7 @@ function Registration({ handleFormSubmit }) {
             hobby,
           } = response.data;
           setFirstName(firstname);
-          setLastname(lastname);
+          setLastName(lastname);
           setEmail(email);
           setPassword(password);
           setOccupation(occupation);
@@ -49,7 +49,7 @@ function Registration({ handleFormSubmit }) {
   const handleCreateProfile = (e, userData) => {
     e.preventDefault();
     axios
-      .post("/api/users", userData)
+      .post("/api/users/{id}", userData)
       .then((response) => {
         console.log(response.data);
         history.push("/dashboard");
@@ -76,9 +76,9 @@ function Registration({ handleFormSubmit }) {
                 lastname,
                 password,
                 email,
-                setOccupation,
-                setSport,
-                setHobby,
+                occupation,
+                sport,
+                hobby,
               },
               id
             );
@@ -88,48 +88,94 @@ function Registration({ handleFormSubmit }) {
             <div className="input-field col s6">
               <input
                 placeholder="First Name"
-                id="first_name"
+                id="firstname"
                 type="text"
                 className="validate"
+                onChange={(e) => {
+                  setFirstName(e.target.value);
+                }}
               />
             </div>
             <div className="input-field col s6">
-              <input id="last_name" type="text" className="validate" />
-              <label for="last_name">Last Name</label>
+              <input
+                id="lastname"
+                type="text"
+                className="validate"
+                onChange={(e) => {
+                  setLastName(e.target.value);
+                }}
+              />
+              <label for="lastname">Last Name</label>
             </div>
           </div>
           <div className="row">
             <div className="input-field col s12">
-              <input id="password" type="password" className="validate" />
+              <input
+                id="password"
+                type="password"
+                className="validate"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+              />
               <label for="password">Password</label>
             </div>
           </div>
           <div className="row">
             <div className="input-field col s12">
-              <input id="email" type="text" className="validate" />
+              <input
+                id="email"
+                type="text"
+                className="validate"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
               <label for="email">Email</label>
             </div>
           </div>
           <div className="row">
             <div className="input-field col s12">
-              <input id="occupation" type="text" className="validate" />
+              <input
+                id="occupation"
+                type="text"
+                className="validate"
+                onChange={(e) => {
+                  setOccupation(e.target.value);
+                }}
+              />
               <label for="occupation">Occupation</label>
             </div>
           </div>
           <div className="row">
             <div className="input-field col s12">
-              <input id="hobby" type="text" className="validate" />
+              <input
+                id="hobby"
+                type="text"
+                className="validate"
+                onChange={(e) => {
+                  setHobby(e.target.value);
+                }}
+              />
               <label for="hobby">Name one hobby</label>
             </div>
           </div>
           <div className="row">
             <div className="input-field col s12">
-              <input id="sport" type="text" className="validate" />
+              <input
+                id="sport"
+                type="text"
+                className="validate"
+                onChange={(e) => {
+                  setSport(e.target.value);
+                }}
+              />
               <label for="Favorite Sports Team">Favorite Sports Team</label>
             </div>
           </div>
 
-          <button
+          <Link
+            to="/dashboard/{id}"
             className="btn waves-effect waves-light"
             type="submit"
             name="action"
@@ -139,7 +185,7 @@ function Registration({ handleFormSubmit }) {
           >
             Finish Registration
             <i className="material-icons right">send</i>
-          </button>
+          </Link>
         </form>
       </div>
     </div>
