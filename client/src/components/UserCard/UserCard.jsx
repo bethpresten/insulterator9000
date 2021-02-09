@@ -1,16 +1,13 @@
-<<<<<<< HEAD
-import React, { useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
-const email = "billybob@billy.com"; // this will come from user registration
-=======
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import './UserCard.css'
-const email = 'billybob@billy.com' // this will come from user registration
->>>>>>> f64436eac80393d6014f17671a593c8041d875ba
+import "./UserCard.css";
+import globalUser from "../../utils/globalUser";
+const email = "billybob@billy.com";
+
+// this will come from user registration
 
 const UserCard = () => {
-  const [data, setData] = useState('')
+  const [data, setData] = useState("");
 
   const getData = () => {
     axios
@@ -19,28 +16,31 @@ const UserCard = () => {
         console.log(response.data);
         setData(response.data);
       })
-      .catch(err => {
-        console.log(err)
-      })
-  }
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  const newUser = useContext(globalUser);
   useEffect(() => {
-    getData()
-  }, [])
+    getData();
+  }, []);
 
   return (
     <div className>
-      <div className='card horizontal hoverable'>
-        <div className='card-stacked'>
-          <div className='card-content left-align'>
-            <h5>Name: {data.firstname} {data.lastname}</h5>
-            <h5>Hobby: {data.hobby}</h5>
-            <h5>Favorite Sports Team: {data.sport}</h5>
-            <h5>Occupation: {data.occupation}</h5>
+      <div className="card horizontal hoverable">
+        <div className="card-stacked">
+          <div className="card-content left-align">
+            <h5>
+              Name: {newUser.firstname} {newUser.lastname}
+            </h5>
+            <h5>Hobby: {newUser.hobby}</h5>
+            <h5>Favorite Sports Team: {newUser.sport}</h5>
+            <h5>Occupation: {newUser.occupation}</h5>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default UserCard
+export default UserCard;

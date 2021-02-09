@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useHistory, Link } from "react-router-dom";
-import PropTypes from "prop-types";
 import "./Registration.css";
 import axios from "axios";
 
@@ -204,16 +203,5 @@ function Registration() {
     </div>
   );
 }
-
-Registration.propTypes = {
-  firstname: PropTypes.string.isRequired,
-  lastname: PropTypes.string,
-  email: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired,
-  occupation: PropTypes.string.isRequired,
-  sport: PropTypes.string.isRequired,
-  hobby: PropTypes.string.isRequired,
-  _id: PropTypes.string.isRequired,
-};
 
 export default Registration;
