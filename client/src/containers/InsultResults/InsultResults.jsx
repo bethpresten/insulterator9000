@@ -1,8 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './InsultResults.css'
-const insult = 'Why you stuck-up, half-witted, scruffy-looking nerfherder!'
+import axios from 'axios'
+const Filter = require('bad-words'),
+  filter = new Filter()
+filter.addWords('dicks', 'fuckton', 'fuckload', 'assload')
 
 function InsultResults () {
+  const [userInsult, setInsult] = useState('')
+  const getInsult = () => {
+    axios
+      .get(`/api/users/get-insult`)
+      .then(response => {
+        console.log(response.data)
+        setInsult(response.data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+  useEffect(() => {
+    getInsult()
+  }, [])
+
   return (
     <div>
       <br />
@@ -13,7 +32,7 @@ function InsultResults () {
           <div className='col s12 m12'>
             <div className='card'>
               <div className='card-content'>
-                <h3>{insult}</h3>
+                <h3>{userInsult}</h3>
               </div>
             </div>
             <br />
