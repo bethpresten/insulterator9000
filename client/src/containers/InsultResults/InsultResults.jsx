@@ -4,10 +4,6 @@ import axios from 'axios'
 const Filter = require('bad-words'),
   filter = new Filter()
 filter.addWords('dicks', 'fuckton', 'fuckload', 'assload')
-const sportsTeam = 'Buccaneers'
-const hobbyType = 'fishing'
-const jobTitle = 'lawyer'
-const insult = 'test'
 
 function InsultResults () {
   const [userInsult, setInsult] = useState('')
