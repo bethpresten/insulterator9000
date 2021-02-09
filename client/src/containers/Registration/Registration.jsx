@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import "./Registration.css";
 import axios from "axios";
 
@@ -15,7 +16,7 @@ function Registration() {
   const { id } = useParams();
 
   useEffect(() => {
-    console.log(id);
+    // console.log(id);
     if (id) {
       axios
         .post(`/api/users/create-user`)
@@ -62,7 +63,7 @@ function Registration() {
     <div className="container">
       <div className="row">
         <div className="col s12">
-          <h1>Register a new account!</h1>
+          <h1 id="registration-heading">Register a new account!</h1>
         </div>
       </div>
       <div className="row">
@@ -180,7 +181,13 @@ function Registration() {
               <label for="hobby">Name one hobby</label>
             </div>
           </div>
-
+          <Link
+            to="/login"
+            className="btn waves-effect waves-light"
+            id="registration-login-button"
+          >
+            Already have an account?
+          </Link>
           <button
             to="/dashboard"
             className="btn waves-effect waves-light"
@@ -197,5 +204,16 @@ function Registration() {
     </div>
   );
 }
+
+Registration.propTypes = {
+  firstname: PropTypes.string.isRequired,
+  lastname: PropTypes.string,
+  email: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired,
+  occupation: PropTypes.string.isRequired,
+  sport: PropTypes.string.isRequired,
+  hobby: PropTypes.string.isRequired,
+  _id: PropTypes.string.isRequired,
+};
 
 export default Registration;

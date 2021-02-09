@@ -1,4 +1,11 @@
-h1 {
+#registration-heading {
   font-family: "Handlee", cursive;
   /* font-family: "Lato", sans-serif; */
+}
+
+#registration-login-button,
+#registration-button {
+  margin-right: 15%;
+  background-color: antiquewhite;
+  color: black;
 }
