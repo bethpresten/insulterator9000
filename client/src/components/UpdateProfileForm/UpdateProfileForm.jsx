@@ -9,7 +9,7 @@ const UpdateProfileForm = ({ handleUpdateProfile }) => {
   return (
     <>
       <form
-        className="col s9"
+        className="col s8"
         onSubmit={(e) => {
           handleUpdateProfile(e, {
             occupation,

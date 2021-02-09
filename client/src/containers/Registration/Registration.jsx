@@ -2,9 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import "./Registration.css";
 import axios from "axios";
-import DropdownOccupation from "../../components/DropdownOccupation/DropdownOccupation";
-import DropdownSports from "../../components/DropdownSports/DropdownSports";
-import DropdownHobbies from "../../components/DropdownHobbies/DropdownHobbies";
 
 function Registration({ handleFormSubmit }) {
   const [firstname, setFirstName] = useState("");

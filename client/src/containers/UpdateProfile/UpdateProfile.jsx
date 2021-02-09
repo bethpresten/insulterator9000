@@ -20,7 +20,7 @@ const UpdateProfile = () => {
   return (
     <div className="container center-align">
       <div className="row">
-        <div className="col s3">
+        <div className="col s4">
           <UserCard />
         </div>
         <ProductForm handleUpdateProfile={handleUpdateProfile} />
