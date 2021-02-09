@@ -17,21 +17,10 @@ const UpdateProfile = () => {
         console.log(err);
       });
   };
-  // const handleDeleteProfile = (e, userData) => {
-  //   e.preventDefault();
-  //   axios
-  //     .delete("/api/user/:id", userData)
-  //     .then((response) => {
-  //       console.log(response.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
   return (
     <div className="container center-align">
       <div className="row">
-        <div className="col s3">
+        <div className="col s4">
           <UserCard />
         </div>
         <ProductForm handleUpdateProfile={handleUpdateProfile} />

@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 // import DeleteProfileButton from "../DeleteProfileButton/DeleteProfileButton";
-import DropdownOccupation from "../DropdownOccupation/DropdownOccupation";
-import DropdownSports from "../DropdownSports/DropdownSports";
-import DropdownHobbies from "../DropdownHobbies.jsx/DropdownHobbies";
 
 const UpdateProfileForm = ({ handleUpdateProfile }) => {
   const [occupation, setOccupation] = useState("");
@@ -12,7 +9,7 @@ const UpdateProfileForm = ({ handleUpdateProfile }) => {
   return (
     <>
       <form
-        className="col s9"
+        className="col s8"
         onSubmit={(e) => {
           handleUpdateProfile(e, {
             occupation,
@@ -21,51 +18,29 @@ const UpdateProfileForm = ({ handleUpdateProfile }) => {
           });
         }}
       >
-        <div className="col s4">
-          <DropdownOccupation
-            category="Occupation"
-            target="dropdown1"
-            // choices={occupationChoices}
-            type="text"
-            name="occupation"
-            value={occupation}
-            onChange={(e) => {
-              setOccupation(e.target.value);
-            }}
-          />
+        <div className="row">
+          <div className="input-field col s12">
+            <input id="occupation" type="text" className="validate" />
+            <label for="occupation">Occupation</label>
+          </div>
         </div>
-        <div className="col s4">
-          <DropdownSports
-            category="Sports Team"
-            target="dropdown2"
-            // choices={sportChoices}
-            type="text"
-            name="sport"
-            value={sport}
-            onChange={(e) => {
-              setSport(e.target.value);
-            }}
-          />
+        <div className="row">
+          <div className="input-field col s12">
+            <input id="hobby" type="text" className="validate" />
+            <label for="hobby">Name one hobby</label>
+          </div>
         </div>
-        <div className="col s4">
-          <DropdownHobbies
-            category="Hobby"
-            target="dropdown3"
-            // choices={hobbyChoices}
-            // id="hobby"
-            type="text"
-            name="hobby"
-            value={hobby}
-            onChange={(e) => {
-              setHobby(e.target.value);
-            }}
-          />
+        <div className="row">
+          <div className="input-field col s12">
+            <input id="sport" type="text" className="validate" />
+            <label for="Favorite Sports Team">Favorite Sports Team</label>
+          </div>
         </div>
         <div className="row">
           <div className="col s12">
             <button
               className="waves-effect waves-light btn hoverable"
-              onClick={handleUpdateProfile}
+              // onClick={handleUpdateProfile}
             >
               Update Profile
             </button>

@@ -1,6 +1,12 @@
 const express = require('express')
 const router = express.Router()
 const User = require('../models/user')
+const axios = require('axios')
+const Filter = require('bad-words'),
+  filter = new Filter()
+filter.addWords('dicks', 'fuckton', 'fuckload', 'assload')
+const selectTemplate = require('./insultTemplates')
+let newURL = ''
 
 //get all users
 router.get('/', (req, res) => {
@@ -58,6 +64,22 @@ router.delete('/delete-user/:email', (req, res) => {
       res.json(result)
     }
   })
+})
+
+// get insult from 3rd party API route
+
+router.get('/get-insult', (req, res) => {
+  newURL = selectTemplate()
+  axios
+    .get(newURL)
+    .then(response => {
+      console.log(`before: ${response.data.insult}`)
+      console.log(`after: ${filter.clean(response.data.insult)}`)
+      res.json(`${filter.clean(response.data.insult)}`)
+    })
+    .catch(error => {
+      console.log(error)
+    })
 })
 
 module.exports = router
