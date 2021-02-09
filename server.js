@@ -31,13 +31,9 @@ connection.on('error', err => {
   console.log('Mongoose connection error: ', err)
 })
 
-//api routes
+//api routing
 
-const UserController = require('./controllers/userController');
-
-//sports team insults
-
-
+const UserController = require('./controllers/userController')
 
 //test route
 app.get('/api/config', (req, res) => {
