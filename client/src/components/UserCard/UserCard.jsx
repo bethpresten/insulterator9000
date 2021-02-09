@@ -21,6 +21,8 @@ const UserCard = () => {
       });
   };
   const newUser = useContext(globalUser);
+  console.log(newUser);
+
   useEffect(() => {
     getData();
   }, []);
