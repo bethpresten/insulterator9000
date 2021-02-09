@@ -19,15 +19,15 @@ function InsultResults () {
             <br />
             <br />
             <div className='row'>
-              <a className='waves-effect waves-light btn-large hoverable'>
+              <button className='waves-effect waves-light btn-large hoverable'>
                 Generate Another
-              </a>
+              </button>
             </div>
             <br />
             <div className='row'>
-              <a className='waves-effect waves-light btn-large hoverable'>
+              <button className='waves-effect waves-light btn-large hoverable'>
                 Go To Your Profile
-              </a>
+              </button>
             </div>
           </div>
         </div>

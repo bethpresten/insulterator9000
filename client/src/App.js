@@ -10,29 +10,23 @@ import UpdateProfile from "./containers/UpdateProfile/UpdateProfile";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import { useEffect } from 'react'
-import axios from 'axios'
 import InsultResults from './containers/InsultResults/InsultResults';
 const Filter = require('bad-words'),
   filter = new Filter()
 filter.addWords('dicks', 'fuckton')
 
 function App() {
+<<<<<<< HEAD
   useEffect(() => {
-
-    //Get insult by user route    
-    // axios
-    //   .get(
-    //     `api/insult/getbyuser/name`,
-    //     {}
-    //   )
-    //   .then(function (response) {
-    //     console.log(`before: ${response.data.insult}`)
-    //     console.log(`after: ${filter.clean(response.data.insult)}`)
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error)
-    //   })
+console.log('something needs to happen in App.js...')
   }, [])
+=======
+  //   useEffect(){
+
+  //   }, []
+  // }
+
+>>>>>>> 6e34384476f30992c620845ee1f1b3bc2feba490
 
   return (
     <>

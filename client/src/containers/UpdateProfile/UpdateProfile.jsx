@@ -3,6 +3,7 @@ import axios from "axios";
 import ProductForm from "../../components/UpdateProfileForm/UpdateProfileForm";
 import "./UpdateProfile.css";
 import DeleteProfileButton from "../../components/DeleteProfileButton/DeleteProfileButton";
+import UserCard from "../../components/UserCard/UserCard";
 
 const UpdateProfile = () => {
   const handleUpdateProfile = (e, userData) => {
@@ -31,22 +32,7 @@ const UpdateProfile = () => {
     <div className="container center-align">
       <div className="row">
         <div className="col s3">
-          <div className="card horizontal hoverable">
-            <div className="card-stacked">
-              <div className="card-content">
-                <h5>Name</h5>
-              </div>
-              <div className="card-content">
-                <h5>Favorite Hobby</h5>
-              </div>
-              <div className="card-content">
-                <h5>Favorite Sports Team</h5>
-              </div>
-              <div className="card-content">
-                <h5>Occupation</h5>
-              </div>
-            </div>
-          </div>
+          <UserCard />
         </div>
         <ProductForm handleUpdateProfile={handleUpdateProfile} />
       </div>
