@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-const email = "billybob@billy.com" // this will come from user registration
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+const email = "billybob@billy.com"; // this will come from user registration
 
 const UserCard = () => {
   const [data, setData] = useState("");
@@ -8,9 +8,9 @@ const UserCard = () => {
   const getData = () => {
     axios
       .get(`/api/users/get-user/${email}`)
-      .then(response => {
-        console.log(response.data)
-        setData(response.data)
+      .then((response) => {
+        console.log(response.data);
+        setData(response.data);
       })
       .catch((err) => {
         console.log(err);
