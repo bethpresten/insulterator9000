@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import "./Registration.css";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
 import DropdownOccupation from "../../components/DropdownOccupation/DropdownOccupation";
 import DropdownSports from "../../components/DropdownSports/DropdownSports";
 import DropdownHobbies from "../../components/DropdownHobbies/DropdownHobbies";
@@ -56,7 +55,7 @@ function Registration({ handleFormSubmit }) {
       .post("/api/users", userData)
       .then((response) => {
         console.log(response.data);
-        history.push("/admin");
+        history.push("/dashboard");
       })
       .catch((err) => {
         console.log(err);
@@ -110,47 +109,29 @@ function Registration({ handleFormSubmit }) {
           </div>
           <div className="row">
             <div className="input-field col s12">
-              <input id="email" type="email" className="validate" />
+              <input id="email" type="text" className="validate" />
               <label for="email">Email</label>
             </div>
           </div>
           <div className="row">
-            <div class="input-field">
-              <DropdownOccupation
-                id="occupation-dropdown"
-                category="Occupation"
-                target="dropdown1"
-                type="text"
-                name="occupation"
-                value={occupation}
-                onChange={(e) => {
-                  setOccupation(e.target.value);
-                }}
-              />
-              <DropdownSports
-                id="sports-dropdown"
-                category="Sports Team"
-                target="dropdown2"
-                type="text"
-                name="sport"
-                value={sport}
-                onChange={(e) => {
-                  setSport(e.target.value);
-                }}
-              />
-              <DropdownHobbies
-                id="hobby-dropdown"
-                category="Hobby"
-                target="dropdown3"
-                type="text"
-                name="hobby"
-                value={hobby}
-                onChange={(e) => {
-                  setHobby(e.target.value);
-                }}
-              />
+            <div className="input-field col s12">
+              <input id="occupation" type="text" className="validate" />
+              <label for="occupation">Occupation</label>
             </div>
           </div>
+          <div className="row">
+            <div className="input-field col s12">
+              <input id="hobby" type="text" className="validate" />
+              <label for="hobby">Name one hobby</label>
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field col s12">
+              <input id="sport" type="text" className="validate" />
+              <label for="Favorite Sports Team">Favorite Sports Team</label>
+            </div>
+          </div>
+
           <button
             className="btn waves-effect waves-light"
             type="submit"

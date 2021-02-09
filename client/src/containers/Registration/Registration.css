@@ -2,13 +2,3 @@ h1 {
   font-family: "Handlee", cursive;
   /* font-family: "Lato", sans-serif; */
 }
-
-#registration-button,
-#occupation-dropdown,
-#sports-dropdown,
-#hobby-dropdown {
-  font-family: "Lato", sans-serif;
-  /* background-color: blue; */
-  margin-top: 10px;
-  width: 30%;
-}
