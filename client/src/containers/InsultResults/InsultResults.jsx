@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import './InsultResults.css'
 import axios from 'axios'
 const Filter = require('bad-words'),
@@ -38,15 +39,22 @@ function InsultResults () {
             <br />
             <br />
             <div className='row'>
-              <button className='waves-effect waves-light btn-large hoverable'>
+              <button
+                className='waves-effect waves-light btn-large hoverable'
+                onClick={() => {
+                  window.location.reload()
+                }}
+              >
                 Generate Another
               </button>
             </div>
             <br />
             <div className='row'>
-              <button className='waves-effect waves-light btn-large hoverable'>
-                Go To Your Profile
-              </button>
+              <Link to={`/dashboard`}>
+                <button className='waves-effect waves-light btn-large hoverable'>
+                  Go To Your Profile
+                </button>
+              </Link>
             </div>
           </div>
         </div>
