@@ -34,6 +34,7 @@ router.get('/get-user/:id', (req, res) => {
 //update user by id
 router.put('/update-user/:id', (req, res) => {
   User.updateOne({ _id: req.params.id }, req.body, function (err, result) {
+
     if (err) {
       res.send(err)
     } else {
