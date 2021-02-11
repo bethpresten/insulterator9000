@@ -33,7 +33,8 @@ router.get('/get-user/:id', (req, res) => {
 
 //update user by id
 router.put('/update-user/:id', (req, res) => {
-  User.updateOne({ id: req.params.id }, req.body, function (err, result) {
+  User.updateOne({ _id: req.params.id }, req.body, function (err, result) {
+
     if (err) {
       res.send(err)
     } else {
@@ -57,7 +58,7 @@ router.post('/create-user', (req, res) => {
 
 //delete user by id
 router.delete('/delete-user/:id', (req, res) => {
-  User.deleteOne({ id: req.params.id }, function (err, result) {
+  User.findByIdAndDelete(req.params.id, function (err, result) {
     if (err) {
       res.send(err)
     } else {
