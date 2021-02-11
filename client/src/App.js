@@ -15,6 +15,20 @@ const Filter = require('bad-words'),
 filter.addWords('dicks', 'fuckton')
 
 function App () {
+  // localStorage.setItem(
+  //   'user',
+  //   JSON.stringify({
+  //     _id: '601c8bc128788e2d19d28463',
+  //     firstname: 'Active',
+  //     lastname: 'User',
+  //     password: 'ActiveUserPW',
+  //     email: 'activeuser@gmail.com',
+  //     hobby: 'hobby',
+  //     sport: 'sport',
+  //     occupation: 'job',
+  //     lastLogin: '2/10/2021'
+  //   })
+  // )
   return (
     <>
       <div className='App'>

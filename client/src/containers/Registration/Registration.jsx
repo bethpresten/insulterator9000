@@ -52,7 +52,7 @@ function Registration () {
       .post(`/api/users/create-user`, userData)
       .then(response => {
         console.log(response.data)
-        localStorage.setItem('user', JSON.stringify(response.data))
+        localStorage.setItem('user', response.data._id)
         history.push('/dashboard')
       })
       .catch(err => {

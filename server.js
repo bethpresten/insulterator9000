@@ -47,7 +47,7 @@ app.use('/api/users', UserController)
 
 //catch all view route
 app.get('*', (req, res) => {
-  res.sendFile(path.join(_dirname, 'client/build/index.html'))
+  res.sendFile(path.join(__dirname, 'client/build/index.html'))
 })
 
 app.listen(PORT, () => {
