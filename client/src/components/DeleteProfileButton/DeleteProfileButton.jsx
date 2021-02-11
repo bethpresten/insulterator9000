@@ -1,29 +1,43 @@
-import React from "react";
-import axios from "axios";
-import "./DeleteProfileButton.css";
-
-const handleDeleteProfile = (e, userData) => {
-  e.preventDefault();
-  axios
-    .delete("/api/user/:id", userData)
-    .then((response) => {
-      console.log(response.data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
-
-function DeleteProfileButton() {
+import React, { useContext } from 'react'
+import axios from 'axios'
+import './DeleteProfileButton.css'
+import globalUser from '../../utils/globalUser'
+import { useParams, useHistory, Link } from 'react-router-dom'
+function DeleteProfileButton () {
+  // const { id } = useParams();
+  const id = localStorage.getItem('user')
+  const history = useHistory()
+  const deleteProfile = () => {
+    if (id) {
+      axios
+        .delete(`/api/users/delete-user/${id}`)
+        .then(() => {
+          alert('profile successfully deleted!')
+          localStorage.clear()
+          // history.push("/welcome");
+          console.log('profile deleted')
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
+  }
   return (
-    <button
-      className="btn hoverable"
-      onClick={handleDeleteProfile}
-      id="delete-button"
-    >
-      Delete Insulterator9000 Profile
-    </button>
-  );
+    <div>
+      <Link to='/'>
+        <button
+          className='btn hoverable'
+          id='delete-button'
+          // to="/welcome"
+          onClick={() => {
+            deleteProfile()
+            // history.push("/welcome");
+          }}
+        >
+          Delete Insulterator9000 Profile
+        </button>
+      </Link>
+    </div>
+  )
 }
-
-export default DeleteProfileButton;
+export default DeleteProfileButton
