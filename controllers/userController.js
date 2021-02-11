@@ -31,9 +31,9 @@ router.get('/get-user/:id', (req, res) => {
   })
 })
 
-//update user by email
-router.put('/update-user/:email', (req, res) => {
-  User.updateOne({ email: req.params.email }, req.body, function (err, result) {
+//update user by id
+router.put('/update-user/:id', (req, res) => {
+  User.updateOne({ id: req.params.id }, req.body, function (err, result) {
     if (err) {
       res.send(err)
     } else {
@@ -55,9 +55,9 @@ router.post('/create-user', (req, res) => {
   })
 })
 
-//delete user by email
-router.delete('/delete-user/:email', (req, res) => {
-  User.deleteOne({ email: req.params.email }, function (err, result) {
+//delete user by id
+router.delete('/delete-user/:id', (req, res) => {
+  User.deleteOne({ id: req.params.id }, function (err, result) {
     if (err) {
       res.send(err)
     } else {
