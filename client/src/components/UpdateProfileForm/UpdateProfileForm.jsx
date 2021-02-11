@@ -31,11 +31,13 @@ const UpdateProfileForm = () => {
   const handleUpdateProfile = (e, userData) => {
     // e.preventDefault()
     console.log(userData)
+    let id = localStorage.getItem('user')
     axios
       .put(`/api/users/update-user/${id}`, userData)
       .then(response => {
         console.log(response.data)
         alert('user profile updated!')
+        window.location.reload()
       })
       .catch(err => {
         console.log(err)
