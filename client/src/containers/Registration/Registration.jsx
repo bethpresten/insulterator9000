@@ -164,7 +164,7 @@ function Registration () {
                   setSport(e.target.value)
                 }}
               />
-              <label for='Favorite Sports Team'>Favorite Sports Team</label>
+              <label for='Favorite Sport'>Favorite Sport</label>
             </div>
           </div>
           <div className='row'>
