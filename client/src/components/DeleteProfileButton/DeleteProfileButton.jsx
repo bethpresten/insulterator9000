@@ -1,48 +1,45 @@
-import React from "react";
+import React, { useContext } from "react";
 import axios from "axios";
 import "./DeleteProfileButton.css";
+import globalUser from "../../utils/globalUser";
+import { useParams, useHistory} from "react-router-dom";
 
-const DeleteProfileButton = async id => {
-  console.log("ID", id);
-  try {
-    const response = await axios.delete(`/api/users/${id}`);
-    console.log(response);
-    fetchingData();
-  } catch (error) {
-    console.log(error);
+
+
+function DeleteProfileButton() {
+  const { id } = useParams();
+
+  const deleteProfile = (id) => {
+    axios
+      .delete(`/api/user/${id}`)
+      .then(() => {
+        alert("profile successfully deleted!");
+
+        console.log("profile deleted");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
   };
-  return (
-        <button
-          className="btn hoverable"
-          onClick={() => DeleteProfileButton(id)}
-          id="delete-button"
-        >
-          Delete Insulterator9000 Profile
-        </button>
-      );
-};
-// const handleDeleteProfile = (e, userData) => {
-//   e.preventDefault();
-//   axios
-//     .delete("/api/user/:id", userData)
-//     .then((response) => {
-//       console.log(response.data);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// // };
+  
+  const deleteUser = useContext(globalUser);
+  console.log(deleteUser);
 
-// // function DeleteProfileButton() {
-//   return (
-//     <button
-//       className="btn hoverable"
-//       onClick={handleDeleteProfile}
-//       id="delete-button"
-//     >
-//       Delete Insulterator9000 Profile
-//     </button>
-//   );
-// };
+  return (
+    <div>
+      <button
+        className="btn hoverable"
+        id="delete-button"
+        onClick={() => {
+          deleteProfile(deleteUser.id);
+        }}
+       
+      >
+        Delete Insulterator9000 Profile
+    </button>
+    </div>
+  );
+};
 
 export default DeleteProfileButton;
