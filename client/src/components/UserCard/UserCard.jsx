@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
 import "./UserCard.css";
+import globalUser from "../../utils/globalUser";
 const email = JSON.parse(localStorage.getItem("user")).email;
 console.log(email);
 
