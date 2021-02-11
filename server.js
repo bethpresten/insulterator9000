@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const path = require('path')
 const app = express()
 
-const PORT = process.env.PORT || 3030
+const PORT = process.env.PORT || 3001
 
 //middleware
 app.use(express.urlencoded({ extended: true }))

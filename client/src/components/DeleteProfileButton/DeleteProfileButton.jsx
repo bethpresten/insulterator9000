@@ -5,34 +5,35 @@ import globalUser from "../../utils/globalUser";
 import { useParams, useHistory} from "react-router-dom";
 
 
-
 function DeleteProfileButton() {
-  const { id } = useParams();
+  // const { id } = useParams();
+  const id = localStorage.getItem('user')
+  // const history = useHistory();
 
-  const deleteProfile = (id) => {
+  const deleteProfile = () => {
     axios
-      .delete(`/api/user/${id}`)
+      .delete(`/delete-user/${id}`)
       .then(() => {
         alert("profile successfully deleted!");
-
+        localStorage.clear();
+        // history.push("/welcome");
         console.log("profile deleted");
       })
       .catch((err) => {
         console.log(err);
       });
-
+    
   };
   
-  const deleteUser = useContext(globalUser);
-  console.log(deleteUser);
-
+  
   return (
     <div>
       <button
         className="btn hoverable"
         id="delete-button"
+        to = "/welcome"
         onClick={() => {
-          deleteProfile(deleteUser.id);
+          deleteProfile();
         }}
        
       >
