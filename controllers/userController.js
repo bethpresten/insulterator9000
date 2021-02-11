@@ -20,9 +20,9 @@ router.get('/', (req, res) => {
     })
 })
 
-//get user by email
-router.get('/get-user/:email', (req, res) => {
-  User.findOne({ email: req.params.email }, function (err, result) {
+//get user by id
+router.get('/get-user/:id', (req, res) => {
+  User.findOne({ _id: req.params.id }, function (err, result) {
     if (err) {
       res.send(err)
     } else {
