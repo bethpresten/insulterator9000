@@ -42,7 +42,7 @@ app.get('/api/config', (req, res) => {
   })
 })
 //FIXME: work on this route
-app.post('/login', (req, res) =>{
+app.post('/api/login', (req, res) =>{
   res.json({
     message: "successfully logged in!",
     token: "coolbro"
