@@ -7,3 +7,7 @@
   color: black;
   margin: 0%;
 }
+
+#delete-button:hover {
+  background-color: rgb(189, 4, 4);
+}

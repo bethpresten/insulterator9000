@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const globalUser = React.createContext({
   _id: '601c8bc128788e2d19d28463',
@@ -12,4 +12,4 @@ const globalUser = React.createContext({
   lastLogin: '10/10/2020'
 })
 
-export default globalUser
+export default globalUser;

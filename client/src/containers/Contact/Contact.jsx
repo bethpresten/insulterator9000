@@ -5,7 +5,11 @@ function Contact() {
   return (
     <div className="container" id="contact-form">
       <div className="row">
-        <form className="col s12">
+        <form
+          className="col s12"
+          action="https://formspree.io/f/maylkwno"
+          method="post"
+        >
           <div className="row">
             <div className="input-field col s8">
               <i className="material-icons prefix">account_circle</i>
@@ -37,6 +41,7 @@ function Contact() {
                 className="validate"
                 name="Message"
                 placeholder="Message"
+                rows="3"
               />
             </div>
           </div>

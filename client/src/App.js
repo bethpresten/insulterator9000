@@ -1,4 +1,3 @@
-import './App.css'
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import Welcome from './containers/Welcome/Welcome'
 import About from './containers/About/About'
@@ -14,7 +13,7 @@ const Filter = require('bad-words'),
   filter = new Filter()
 filter.addWords('dicks', 'fuckton')
 
-function App () {
+function App() {
   // localStorage.setItem(
   //   'user',
   //   JSON.stringify({

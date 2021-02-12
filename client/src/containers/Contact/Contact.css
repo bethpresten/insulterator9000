@@ -11,6 +11,34 @@
 
 .btn {
   border-radius: 10px;
-  background-color: #69c3f0;
   font-family: "Lato", sans-serif;
+}
+
+.btn,
+.btn-large,
+.btn-small {
+  background-color: #ebb3a2;
+  color: rgb(61, 56, 56);
+}
+
+.btn:hover,
+.btn-large:hover,
+.btn-small:hover {
+  background-color: #f18975;
+}
+
+.btn:focus,
+.btn-large:focus,
+.btn-small:focus {
+  background-color: #eb9f89;
+}
+
+body {
+  background-color: #fcf7eb;
+}
+
+.container {
+  margin: auto;
+  width: 85%;
+  align-items: center;
 }

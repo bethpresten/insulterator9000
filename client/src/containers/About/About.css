@@ -7,6 +7,9 @@ p {
 }
 
 #email-btn {
-  background-color: antiquewhite;
   margin: 15px;
+}
+
+#about-us-container {
+  text-align: center;
 }
