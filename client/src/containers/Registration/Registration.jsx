@@ -53,6 +53,9 @@ function Registration () {
       .then(response => {
         console.log(response.data)
         localStorage.setItem('user', response.data._id)
+        localStorage.setItem('sport', response.data.sport)
+        localStorage.setItem('occupation', response.data.occupation)
+        localStorage.setItem('hobby', response.data.hobby)
         history.push('/dashboard')
       })
       .catch(err => {

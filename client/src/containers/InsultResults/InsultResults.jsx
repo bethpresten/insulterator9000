@@ -5,10 +5,10 @@ import axios from 'axios'
 const Filter = require('bad-words'),
   filter = new Filter()
 filter.addWords('dicks', 'fuckton', 'fuckload', 'assload')
-const id = localStorage.getItem('user')
 
 function InsultResults () {
   const [userInsult, setInsult] = useState('')
+
   const getInsult = () => {
     axios
       .get(`/api/users/get-insult`)
