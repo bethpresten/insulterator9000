@@ -41,7 +41,13 @@ app.get('/api/config', (req, res) => {
     success: true
   })
 })
-
+//FIXME: work on this route
+app.post('/login', (req, res) =>{
+  res.json({
+    message: "successfully logged in!",
+    token: "coolbro"
+  });
+});
 //set all routes prefix to '/api/users'
 app.use('/api/users', UserController)
 
