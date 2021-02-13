@@ -1,17 +1,12 @@
-#form-group {
-  width: 65%;
-  font-family: "Lato", sans-serif;
-}
-
 #contact-form {
   align-items: center;
   text-align: center;
+  width: 95%;
   font-family: "Lato", sans-serif;
 }
 
-.btn {
-  border-radius: 10px;
-  font-family: "Lato", sans-serif;
+#contact-div {
+  margin-right: 25%;
 }
 
 .btn,
@@ -19,6 +14,7 @@
 .btn-small {
   background-color: #ebb3a2;
   color: rgb(61, 56, 56);
+  font-family: "Lato", sans-serif;
 }
 
 .btn:hover,

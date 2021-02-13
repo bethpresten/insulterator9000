@@ -1,5 +1,6 @@
 .card {
   border-radius: 10px;
+  background-color: whitesmoke;
 }
 
 ul {
@@ -12,4 +13,9 @@ ul {
   margin: 20px;
   width: 85%;
   /* background-color: whitesmoke; */
+}
+
+#delete-row {
+  text-align: right;
+  padding-top: 10%;
 }

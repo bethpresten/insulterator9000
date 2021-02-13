@@ -52,18 +52,16 @@ function Contact() {
               />
             </div>
           </div>
-          <div className="row">
-            <div className="col s6">
-              <button
-                className="btn"
-                type="submit"
-                name="action"
-                value="Send"
-                onClick={sendEmail}
-              >
-                Submit
-              </button>
-            </div>
+          <div className="row" id="contact-div">
+            <button
+              className="btn"
+              type="submit"
+              name="action"
+              value="Send"
+              onClick={sendEmail}
+            >
+              Submit
+            </button>
           </div>
         </form>
       </div>

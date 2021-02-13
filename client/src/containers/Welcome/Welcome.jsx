@@ -1,30 +1,31 @@
 import React from "react";
+import "./Welcome.css";
 
-function Welcome () {
+function Welcome() {
   return (
     <div>
       <br />
-      <div className='collection'>
-        <h1 id='welcome-title'>
-            WELCOME!! >>> GET YOUR SASSY #$%&#@* INSULTS HERE!
+      <div className="collection">
+        <h1 id="welcome-title">
+          WELCOME!! >>> GET YOUR SASSY #$%&#@* INSULTS HERE!
         </h1>
       </div>
       <div>
         <iframe
-          src='https://giphy.com/embed/qWpMdM0rGVgpW'
-          width='480'
-          height='264'
-          frameBorder='0'
-          className='giphy-embed left'
+          src="https://giphy.com/embed/qWpMdM0rGVgpW"
+          width="480"
+          height="264"
+          frameBorder="0"
+          className="giphy-embed left"
           title="Anchorman insult"
           allowFullScreen
         ></iframe>
         <iframe
-          src='https://giphy.com/embed/Pjg3K3U4y0tjbc17Mx'
-          width='480'
-          height='264'
-          frameBorder='0'
-          className='giphy-embed right'
+          src="https://giphy.com/embed/Pjg3K3U4y0tjbc17Mx"
+          width="480"
+          height="264"
+          frameBorder="0"
+          className="giphy-embed right"
           title="Ricky Gervais insult"
           allowFullScreen
         ></iframe>
@@ -32,7 +33,7 @@ function Welcome () {
         <br />
       </div>
     </div>
-  )
+  );
 }
 
 export default Welcome;
