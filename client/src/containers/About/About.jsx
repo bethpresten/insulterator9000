@@ -3,7 +3,7 @@ import "./About.css";
 
 function About() {
   return (
-    <div className="container">
+    <div className="container" id="about-us-container">
       <div className="row">
         <h4>About the Insulerator9000</h4>
         <p>
@@ -23,7 +23,12 @@ function About() {
             className="waves-effect waves-light btn hoverable"
             id="email-btn"
           >
-            <a href="mailto:prestobeth462@gmail.com"> Email Us!</a>
+            <a
+              href="mailto:prestobeth462@gmail.com"
+              style={{ color: "rgb(61, 56, 56)" }}
+            >
+              Email Us!
+            </a>
           </button>
         </div>
       </div>

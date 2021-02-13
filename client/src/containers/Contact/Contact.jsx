@@ -1,11 +1,22 @@
 import React from "react";
 import "./Contact.css";
 
+function sendEmail() {
+  alert(
+    "Your message has been sent.  Please allow 24-48 business hours for a response."
+  );
+  window.location.href = "/dashboard";
+}
+
 function Contact() {
   return (
     <div className="container" id="contact-form">
       <div className="row">
-        <form className="col s12">
+        <form
+          action="https://formspree.io/f/mbjpblpg"
+          className="col s12"
+          method="post"
+        >
           <div className="row">
             <div className="input-field col s8">
               <i className="material-icons prefix">account_circle</i>
@@ -37,15 +48,20 @@ function Contact() {
                 className="validate"
                 name="Message"
                 placeholder="Message"
+                rows="3"
               />
             </div>
           </div>
-          <div className="row">
-            <div className="col s6">
-              <button className="btn" type="submit" name="action" value="Send">
-                Submit
-              </button>
-            </div>
+          <div className="row" id="contact-div">
+            <button
+              className="btn"
+              type="submit"
+              name="action"
+              value="Send"
+              onClick={sendEmail}
+            >
+              Submit
+            </button>
           </div>
         </form>
       </div>

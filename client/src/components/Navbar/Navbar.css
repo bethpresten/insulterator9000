@@ -1,6 +1,6 @@
 nav {
-  background-color: #bd6140;
-  font-size: 30px;
+  background-color: #b0c3b5;
+  font-size: 35px;
   font-family: "Handlee", cursive;
   /* font-family: "Lato", sans-serif; */
 }
@@ -10,6 +10,7 @@ nav {
   font-family: "Lora", serif;
 }
 
-#hide {
-  display: none !important;
+.nav-link {
+  font-size: 22px;
+  font-family: "Lora", serif;
 }

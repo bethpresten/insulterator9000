@@ -23,7 +23,9 @@ const Login = ({ setToken}) => {
         <h1>Sign in to be INSULERATED!</h1>
       </div>
       <div className="row">
-        <form className="col s12" onSubmit = {handleFormSubmit}>
+
+        <form className="col s12" id="login-form" onSubmit = {handleFormSubmit}>
+
           <div className="row">
             <div className="input-field col offset-s2 s8">
               <i className="material-icons prefix">account_circle</i>
@@ -51,8 +53,10 @@ const Login = ({ setToken}) => {
               <label htmlFor="password">Password</label>
             </div>
           </div>
-        
-        <div class="row">
+
+     
+        <div class="row" id="button-row">
+
           <div className="col s4">
             
             <button className="btn waves-effect waves-light hoverable"> Sign in! </button>
@@ -61,6 +65,7 @@ const Login = ({ setToken}) => {
           <div className="col s4">
             <h3> -OR- </h3>
           </div>
+
 
           <Link
             className="btn waves-effect waves-light hoverable"
@@ -71,6 +76,7 @@ const Login = ({ setToken}) => {
             Register
             <i className="material-icons right">send</i>
             </Link>
+
         </div>
         </form>
       </div>
