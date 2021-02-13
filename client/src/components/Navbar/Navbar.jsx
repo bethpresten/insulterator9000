@@ -52,16 +52,6 @@ function Navbar() {
                 Log in
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/registration"
-                className="nav-link"
-                activeClassName="active"
-                id="hide"
-              >
-                Registration
-              </NavLink>
-            </li>
           </ul>
         </div>
       </nav>

@@ -1,16 +1,40 @@
-#form-group {
-  width: 65%;
-  font-family: "Lato", sans-serif;
-}
-
 #contact-form {
   align-items: center;
   text-align: center;
+  width: 95%;
   font-family: "Lato", sans-serif;
 }
 
-.btn {
-  border-radius: 10px;
-  background-color: #69c3f0;
+#contact-div {
+  margin-right: 25%;
+}
+
+.btn,
+.btn-large,
+.btn-small {
+  background-color: #ebb3a2;
+  color: rgb(61, 56, 56);
   font-family: "Lato", sans-serif;
+}
+
+.btn:hover,
+.btn-large:hover,
+.btn-small:hover {
+  background-color: #f18975;
+}
+
+.btn:focus,
+.btn-large:focus,
+.btn-small:focus {
+  background-color: #eb9f89;
+}
+
+body {
+  background-color: #fcf7eb;
+}
+
+.container {
+  margin: auto;
+  width: 85%;
+  align-items: center;
 }

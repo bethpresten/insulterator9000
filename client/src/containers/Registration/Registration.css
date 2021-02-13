@@ -5,7 +5,6 @@
 
 #registration-login-button,
 #registration-button {
-  margin-right: 15%;
-  background-color: antiquewhite;
-  color: black;
+  /* margin-right: 15%; */
+  margin-left: 15%;
 }

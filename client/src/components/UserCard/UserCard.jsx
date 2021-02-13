@@ -1,43 +1,43 @@
-import React, { useContext, useState, useEffect } from 'react'
-import axios from 'axios'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 const initialState = {
-  firstname: '',
-  lastname: '',
-  hobby: '',
-  sport: '',
-  occupation: ''
-}
+  firstname: "",
+  lastname: "",
+  hobby: "",
+  sport: "",
+  occupation: "",
+};
 
 const UserCard = () => {
-  const [data, setData] = useState(initialState)
+  const [data, setData] = useState(initialState);
 
   const getData = () => {
-    const id = localStorage.getItem('user')
-    console.log(id)
+    const id = localStorage.getItem("user");
+    console.log(id);
     if (id) {
       axios
         .get(`/api/users/get-user/${id}`)
-        .then(response => {
-          console.log(response.data)
+        .then((response) => {
+          console.log(response.data);
           if (response.data) {
-            setData(response.data)
+            setData(response.data);
           }
         })
-        .catch(err => {
-          console.log(err)
-        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
-  }
+  };
 
   useEffect(() => {
-    getData()
-  }, [])
+    getData();
+  }, []);
 
   return (
     <div className>
-      <div className='card horizontal hoverable'>
-        <div className='card-stacked'>
-          <div className='card-content left-align'>
+      <div className="card horizontal hoverable">
+        <div className="card-stacked">
+          <div className="card-content left-align">
             <h5>
               Name: {data.firstname} {data.lastname}
             </h5>
@@ -48,7 +48,7 @@ const UserCard = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default UserCard
+export default UserCard;
