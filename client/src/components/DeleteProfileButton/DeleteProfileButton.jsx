@@ -1,11 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import axios from "axios";
 import "./DeleteProfileButton.css";
-import { useParams, useHistory, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 function DeleteProfileButton() {
   // const { id } = useParams();
   const id = localStorage.getItem("user");
-  const history = useHistory();
   const deleteProfile = () => {
     if (id) {
       axios

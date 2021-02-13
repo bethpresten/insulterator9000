@@ -50,23 +50,16 @@ function Registration() {
     e.preventDefault();
     axios
       .post(`/api/users/create-user`, userData)
-<<<<<<< HEAD
       .then((response) => {
         console.log(response.data);
         localStorage.setItem("user", response.data._id);
+        localStorage.setItem("sport", response.data.sport);
+        localStorage.setItem("occupation", response.data.occupation);
+        localStorage.setItem("hobby", response.data.hobby);
         history.push("/dashboard");
-=======
-      .then(response => {
-        console.log(response.data)
-        localStorage.setItem('user', response.data._id)
-        localStorage.setItem('sport', response.data.sport)
-        localStorage.setItem('occupation', response.data.occupation)
-        localStorage.setItem('hobby', response.data.hobby)
-        history.push('/dashboard')
       })
-      .catch(err => {
-        console.log(err)
->>>>>>> ecd523ef04284ba16033496a3214b38a3b08ec79
+      .catch((err) => {
+        console.log(err);
       })
       .catch((err) => {
         console.log(err);
