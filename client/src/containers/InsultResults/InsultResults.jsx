@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { TwitterShareButton } from 'react-share'
+import { TwitterIcon } from 'react-share'
 import './InsultResults.css'
 import axios from 'axios'
 
@@ -59,6 +61,15 @@ function InsultResults () {
               </div>
             </div>
             <br />
+            <div className='row'>
+              <TwitterShareButton
+                url='https://warm-anchorage-65464.herokuapp.com/#/'
+                title={userInsult}
+                className='Demo__some-network__share-button'
+              >
+                <TwitterIcon size={32} round />
+              </TwitterShareButton>
+            </div>
             <br />
             <div className='row'>
               <button
