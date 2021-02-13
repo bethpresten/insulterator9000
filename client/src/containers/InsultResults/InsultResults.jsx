@@ -8,6 +8,30 @@ filter.addWords('dicks', 'fuckton', 'fuckload', 'assload')
 
 function InsultResults () {
   const [userInsult, setInsult] = useState('')
+  //first get the user data and pass to the BE
+  const getUserData = () => {
+    const sport = localStorage.getItem('sport')
+    const hobby = localStorage.getItem('hobby')
+    const occupation = localStorage.getItem('occupation')
+    const OPTIONS = {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        sport: sport,
+        hobby: hobby,
+        occupation: occupation
+      })
+    }
+    fetch('/api/users/data', OPTIONS)
+      .then(res => res.json())
+      .then(res => {
+        console.log(res)
+      })
+  }
+  //second generate the insult from templates available and 3rd party API call on BE
   const getInsult = () => {
     axios
       .get(`/api/users/get-insult`)
@@ -20,6 +44,7 @@ function InsultResults () {
       })
   }
   useEffect(() => {
+    getUserData()
     getInsult()
   }, [])
 

@@ -55,6 +55,9 @@ const Registration = ({setToken}) => {
         setToken(response.data.token);
         console.log(response.data)
         localStorage.setItem('user', response.data._id)
+        localStorage.setItem('sport', response.data.sport)
+        localStorage.setItem('occupation', response.data.occupation)
+        localStorage.setItem('hobby', response.data.hobby)
         history.push('/dashboard')
       })
       .catch(err => {
@@ -166,7 +169,7 @@ const Registration = ({setToken}) => {
                   setSport(e.target.value)
                 }}
               />
-              <label for='Favorite Sports Team'>Favorite Sports Team</label>
+              <label for='Favorite Sport'>Favorite Sport</label>
             </div>
           </div>
           <div className='row'>
