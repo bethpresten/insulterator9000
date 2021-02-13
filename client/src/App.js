@@ -1,3 +1,7 @@
+
+import './App.css'
+import React, {useState} from "react";
+
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import Welcome from './containers/Welcome/Welcome'
 import About from './containers/About/About'
@@ -9,11 +13,15 @@ import UpdateProfile from './containers/UpdateProfile/UpdateProfile'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
 import InsultResults from './containers/InsultResults/InsultResults'
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 const Filter = require('bad-words'),
   filter = new Filter()
 filter.addWords('dicks', 'fuckton')
 
-function App() {
+
+function App () {
+  const [token, setToken] = useState("");
+
   // localStorage.setItem(
   //   'user',
   //   JSON.stringify({
@@ -37,11 +45,13 @@ function App() {
             <Route exact path='/' component={Welcome} />
             <Route path='/about' component={About} />
             <Route path='/contact' component={Contact} />
-            <Route path='/login' component={Login} />
-            <Route path='/dashboard' component={Dashboard} />
-            <Route path='/registration' component={Registration} />
-            <Route path='/insultresults' component={InsultResults} />
-            <Route path='/updateprofile' component={UpdateProfile} />
+            <Route path='/login' 
+            component= {(props) => <Login {...props} setToken = {setToken} />}/>
+            <ProtectedRoute path='/dashboard' component={Dashboard} token={token} />
+            <Route path='/registration' 
+            component= {(props) => <Registration {...props} setToken = {setToken} />}/>
+            <ProtectedRoute path='/insultresults' component={InsultResults} token={token} />
+            <ProtectedRoute path='/updateprofile' component={UpdateProfile} token={token} />
           </Switch>
           <Footer />
         </Router>
