@@ -4,7 +4,7 @@ const User = require('../models/user')
 const axios = require('axios')
 const Filter = require('bad-words'),
   filter = new Filter()
-filter.addWords('dicks', 'fuckton', 'fuckload', 'assload')
+filter.addWords('dicks', 'fuckton', 'fuckload', 'assload', 'shitload')
 let newURL = ''
 let randNumb = 0
 let userData = {}

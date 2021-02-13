@@ -21,12 +21,14 @@
 .btn-large:hover,
 .btn-small:hover {
   background-color: #f18975;
+  color: rgb(61, 56, 56);
 }
 
 .btn:focus,
 .btn-large:focus,
 .btn-small:focus {
   background-color: #eb9f89;
+  color: rgb(61, 56, 56);
 }
 
 body {
