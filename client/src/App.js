@@ -1,6 +1,4 @@
-
-import './App.css'
-import React, {useState} from "react";
+import React, { useState } from 'react'
 
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import Welcome from './containers/Welcome/Welcome'
@@ -18,9 +16,8 @@ const Filter = require('bad-words'),
   filter = new Filter()
 filter.addWords('dicks', 'fuckton')
 
-
 function App () {
-  const [token, setToken] = useState("");
+  const [token, setToken] = useState('')
 
   // localStorage.setItem(
   //   'user',
@@ -45,13 +42,31 @@ function App () {
             <Route exact path='/' component={Welcome} />
             <Route path='/about' component={About} />
             <Route path='/contact' component={Contact} />
-            <Route path='/login' 
-            component= {(props) => <Login {...props} setToken = {setToken} />}/>
-            <ProtectedRoute path='/dashboard' component={Dashboard} token={token} />
-            <Route path='/registration' 
-            component= {(props) => <Registration {...props} setToken = {setToken} />}/>
-            <ProtectedRoute path='/insultresults' component={InsultResults} token={token} />
-            <ProtectedRoute path='/updateprofile' component={UpdateProfile} token={token} />
+            <Route
+              path='/login'
+              component={props => <Login {...props} setToken={setToken} />}
+            />
+            <ProtectedRoute
+              path='/dashboard'
+              component={Dashboard}
+              token={token}
+            />
+            <Route
+              path='/registration'
+              component={props => (
+                <Registration {...props} setToken={setToken} />
+              )}
+            />
+            <ProtectedRoute
+              path='/insultresults'
+              component={InsultResults}
+              token={token}
+            />
+            <ProtectedRoute
+              path='/updateprofile'
+              component={UpdateProfile}
+              token={token}
+            />
           </Switch>
           <Footer />
         </Router>
