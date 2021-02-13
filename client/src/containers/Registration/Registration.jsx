@@ -3,7 +3,7 @@ import { useParams, useHistory, Link } from 'react-router-dom'
 import './Registration.css'
 import axios from 'axios'
 
-function Registration () {
+const Registration = ({setToken}) => {
   const [firstname, setFirstName] = useState('')
   const [lastname, setLastName] = useState('')
   const [password, setPassword] = useState('')
@@ -20,7 +20,8 @@ function Registration () {
       axios
         .post(`/api/users/create-user`)
         .then(response => {
-          console.log(response.data)
+          console.log(response.data);
+          
           const {
             firstname,
             lastname,
@@ -51,6 +52,7 @@ function Registration () {
     axios
       .post(`/api/users/create-user`, userData)
       .then(response => {
+        setToken(response.data.token);
         console.log(response.data)
         localStorage.setItem('user', response.data._id)
         localStorage.setItem('sport', response.data.sport)
