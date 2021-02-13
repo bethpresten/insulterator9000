@@ -114,7 +114,7 @@ function Registration() {
                   setLastName(e.target.value);
                 }}
               />
-              <label for="lastname">Last Name</label>
+              <label htmlFor="lastname">Last Name</label>
             </div>
           </div>
           <div className="row">
@@ -128,7 +128,7 @@ function Registration() {
                   setPassword(e.target.value);
                 }}
               />
-              <label for="password">Password</label>
+              <label htmlFor="password">Password</label>
             </div>
           </div>
           <div className="row">
@@ -142,7 +142,7 @@ function Registration() {
                   setEmail(e.target.value);
                 }}
               />
-              <label for="email">Email</label>
+              <label htmlFor="email">Email</label>
             </div>
           </div>
           <div className="row">
@@ -156,7 +156,7 @@ function Registration() {
                   setOccupation(e.target.value);
                 }}
               />
-              <label for="occupation">Occupation</label>
+              <label htmlFor="occupation">Occupation</label>
             </div>
           </div>
           <div className="row">
@@ -170,7 +170,7 @@ function Registration() {
                   setSport(e.target.value);
                 }}
               />
-              <label for="Favorite Sport">Favorite Sport</label>
+              <label htmlFor="Favorite Sport">Favorite Sport</label>
             </div>
           </div>
           <div className="row">
@@ -184,7 +184,7 @@ function Registration() {
                   setHobby(e.target.value);
                 }}
               />
-              <label for="hobby">Name one hobby</label>
+              <label htmlFor="hobby">Name one hobby</label>
             </div>
           </div>
           <Link
