@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './InsultResults.css'
 import axios from 'axios'
-const Filter = require('bad-words'),
-  filter = new Filter()
-filter.addWords('dicks', 'fuckton', 'fuckload', 'assload')
 
 function InsultResults () {
   const [userInsult, setInsult] = useState('')
