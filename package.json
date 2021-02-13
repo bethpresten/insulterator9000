@@ -1,7 +1,10 @@
 {
   "name": "insulterator9000",
   "version": "1.0.0",
-  "description": "",
+  "engines": {
+    "node": "14.x"
+  },
+  "description": "an insulting app",
   "main": "server.js",
   "proxy": "localhost:3001",
   "scripts": {
