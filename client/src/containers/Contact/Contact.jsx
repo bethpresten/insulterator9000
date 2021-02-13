@@ -1,13 +1,20 @@
 import React from "react";
 import "./Contact.css";
 
+function sendEmail() {
+  alert(
+    "Your message has been sent.  Please allow 24-48 business hours for a response."
+  );
+  window.location.href = "/dashboard";
+}
+
 function Contact() {
   return (
     <div className="container" id="contact-form">
       <div className="row">
         <form
+          action="https://formspree.io/f/mbjpblpg"
           className="col s12"
-          action="https://formspree.io/f/maylkwno"
           method="post"
         >
           <div className="row">
@@ -47,7 +54,13 @@ function Contact() {
           </div>
           <div className="row">
             <div className="col s6">
-              <button className="btn" type="submit" name="action" value="Send">
+              <button
+                className="btn"
+                type="submit"
+                name="action"
+                value="Send"
+                onClick={sendEmail}
+              >
                 Submit
               </button>
             </div>
