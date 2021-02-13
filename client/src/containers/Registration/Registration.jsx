@@ -50,27 +50,49 @@ const Registration = ({setToken}) => {
 
   const history = useHistory();
 
+  const handleLogin = (e) => {
+    e.preventDefault();
+    axios.post("/api/login", {email, password}).then((response)=> {
+      console.log(response);
+      setToken(response.data.token);
+      history.push("/dashboard")
+    }).catch((err)=> {
+      console.log(err);
+    });
+  };
+
+  
   const handleCreateProfile = (e, userData) => {
     e.preventDefault();
     axios
       .post(`/api/users/create-user`, userData)
 
       .then(response => {
-        setToken(response.data.token);
+        // setToken(response.data.token);
         console.log(response.data)
-        localStorage.setItem('user', response.data._id)
+        alert('user profile succesffuly created!');
+        localStorage.clear();
+        localStorage.setItem('id', response.data._id)
         localStorage.setItem('sport', response.data.sport)
         localStorage.setItem('occupation', response.data.occupation)
         localStorage.setItem('hobby', response.data.hobby)
-        history.push('/dashboard')
+        // history.push('/dashboard')
 
       })
       .catch((err) => {
         console.log(err);
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      // .catch((err) => {
+      //   console.log(err);
+      // })
+      // .post("/api/login", {email, password}).then((response)=> {
+      //   console.log(response);
+      //   setToken(response.data.token);
+      //   history.push("/dashboard")
+      // }).catch((err)=> {
+      //   console.log(err);
+      // });
+
   };
   return (
     <div className="container">
@@ -83,6 +105,7 @@ const Registration = ({setToken}) => {
         <form
           className="col s12"
           onSubmit={(e) => {
+            
             handleCreateProfile(
               e,
               {
@@ -96,6 +119,7 @@ const Registration = ({setToken}) => {
               },
               id
             );
+            handleLogin(e)
           }}
         >
           <div className="row">

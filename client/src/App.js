@@ -1,5 +1,4 @@
 
-import './App.css'
 import React, {useState} from "react";
 
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
@@ -21,7 +20,7 @@ filter.addWords('dicks', 'fuckton')
 
 function App () {
   const [token, setToken] = useState("");
-
+  // localStorage.clear();
   // localStorage.setItem(
   //   'user',
   //   JSON.stringify({

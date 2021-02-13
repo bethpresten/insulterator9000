@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useEffect, useState} from 'react'
+import { useParams, useHistory } from 'react-router-dom'
 import axios from 'axios'
 // import DeleteProfileButton from "../DeleteProfileButton/DeleteProfileButton";
 
@@ -7,7 +7,7 @@ const UpdateProfileForm = () => {
   const [occupation, setOccupation] = useState('')
   const [sport, setSport] = useState('')
   const [hobby, setHobby] = useState('')
-
+  const history = useHistory();
   const { id } = useParams()
 
   useEffect(() => {
@@ -29,15 +29,19 @@ const UpdateProfileForm = () => {
   }, [id])
 
   const handleUpdateProfile = (e, userData) => {
+    e.preventDefault();
     // e.preventDefault()
     console.log(userData)
-    let id = localStorage.getItem('user')
+    let id = localStorage.getItem('id')
     axios
       .put(`/api/users/update-user/${id}`, userData)
       .then(response => {
         console.log(response.data)
-        alert('user profile updated!')
-        window.location.reload()
+        alert('user profile updated!');
+        history.push("/dashboard");
+        localStorage.setItem("sport", sport);
+        localStorage.setItem("hobby", hobby);
+        localStorage.setItem("occupation", occupation);
       })
       .catch(err => {
         console.log(err)
@@ -58,6 +62,7 @@ const UpdateProfileForm = () => {
             },
             id
           )
+          handleUpdateProfile(e)
         }}
       >
         <div className='row'>
@@ -109,7 +114,7 @@ const UpdateProfileForm = () => {
               type='submit'
               name='action'
               id='update-button'
-              onSubmit={handleUpdateProfile}
+              
             >
               Update Profile
             </button>

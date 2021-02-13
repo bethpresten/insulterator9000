@@ -1,11 +1,12 @@
 import React from "react";
 import axios from "axios";
 import "./DeleteProfileButton.css";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 function DeleteProfileButton() {
   // const { id } = useParams();
-  const id = localStorage.getItem("user");
+  let id = localStorage.getItem("id");
   const deleteProfile = () => {
+    
     if (id) {
       axios
         .delete(`/api/users/delete-user/${id}`)
@@ -13,7 +14,8 @@ function DeleteProfileButton() {
           alert("profile successfully deleted!");
           localStorage.clear();
           // history.push("/welcome");
-          console.log("profile deleted");
+          console.log("profile deleted")
+          
         })
         .catch((err) => {
           console.log(err);
