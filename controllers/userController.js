@@ -34,19 +34,25 @@ router.get('/get-user/:id', (req, res) => {
 })
 
 //login user route
-router.post('/login/', (req, res) => {
+router.post('/login', (req, res) => {
   console.log(req.body)
+  console.log(req.body.email.toLowerCase())
   User.findOne({ email: req.body.email.toLowerCase() })
     .then(foundUser => {
       console.log(foundUser)
       bcrypt
         .compare(req.body.password, foundUser.password)
-        .then((err, result) => {
+        .then((result, err) => {
           console.log(result)
+          console.log(err)
           if (result) {
             res.json({
               message: 'successfully logged in!',
-              token: 'coolbro'
+              token: 'coolbro',
+              id: foundUser._id,
+              sport: foundUser.sport,
+              occupation: foundUser.occupation,
+              hobby: foundUser.hobby
             })
           } else {
             res.status(401).end()
