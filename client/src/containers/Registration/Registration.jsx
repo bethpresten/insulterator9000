@@ -77,6 +77,7 @@ const Registration = ({setToken}) => {
         localStorage.setItem('occupation', response.data.occupation)
         localStorage.setItem('hobby', response.data.hobby)
         // history.push('/dashboard')
+        
 
       })
       .catch((err) => {
