@@ -1,50 +1,47 @@
-const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose')
+const bcrypt = require('bcrypt')
+const Schema = mongoose.Schema
 
 const UserSchema = Schema({
+  firstname: {
+    type: String
+  },
+  lastname: {
+    type: String
+  },
+  password: {
+    type: String
+  },
+  email: {
+    type: String
+  },
+  hobby: {
+    type: String
+  },
+  sport: {
+    type: String
+  },
+  occupation: {
+    type: String
+  },
+  lastLogin: {
+    type: Date,
+    default: Date.now
+  }
+})
 
-    firstname: {
-        type: String,
-    },
-    lastname: {
-        type: String,
-    },
-    password: {
-        type: String,
-    },
-    email: {
-        type: String,
-    },
-    hobby: {
-        type: String,
-    },
-    sport: {
-        type: String,
-    },
-    occupation: {
-        type: String,
-    },
-    lastLogin: {
-        type: Date, default: Date.now,
-    }
-
-});
-UserSchema.pre(
-    'save',
-    async function(next){
-        const user = this;
-        const hash = await bcrypt.hash(this.password, 10);
-        this.password =hash;
-        this.email = this.email.toLowerCase();
-        next();
-    }
-);
+UserSchema.pre('save', async function (next) {
+  const user = this
+  const hash = await bcrypt.hash(this.password, 10)
+  this.password = hash
+  this.email = this.email.toLowerCase()
+  next()
+})
 UserSchema.methods.isValidPassword = async function (password) {
-    const user = this;
-    const compare = await bcrypt.compare(password, user.password);
-    return compare;
+  const user = this
+  const compare = await bcrypt.compare(password, user.password)
+  return compare
 }
 
-const User = mongoose.model("User", UserSchema);
-module.exports = User;
+const User = mongoose.model('User', UserSchema)
+module.exports = User

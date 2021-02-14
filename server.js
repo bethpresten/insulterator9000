@@ -46,8 +46,6 @@ app.get('/api/config', (req, res) => {
 //set all routes prefix to '/api/users'
 app.use('/api/users', UserController)
 
-
-
 //catch all view route
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client/build/index.html'))

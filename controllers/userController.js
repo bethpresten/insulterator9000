@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const User = require('../models/user')
+const bcrypt = require('bcrypt')
 const axios = require('axios')
 const Filter = require('bad-words'),
   filter = new Filter()
@@ -31,24 +32,32 @@ router.get('/get-user/:id', (req, res) => {
     }
   })
 })
-router.post('/login', (req, res) =>{
-  User.findOne({ email: req.body.email.toLowerCase()}).then((foundUser)=> {
-    console.log(foundUser);
-    bcrypt.compare(req.body.password, foundUser.password).then((result)=>{
-      console.log(result);
-      if(result){
-        res.json({
-          message: "successfully logged in!",
-          token: "coolbro"
-        });
-      } else{
-        res.status(401).end();
-      }
-    }
-    )
-  })
- 
+
+//login user route
+router.post('/login/', (req, res) => {
+  console.log(req.body)
+  User.findOne({ email: req.body.email.toLowerCase() })
+    .then(foundUser => {
+      console.log(foundUser)
+      bcrypt
+        .compare(req.body.password, foundUser.password)
+        .then((err, result) => {
+          console.log(result)
+          if (result) {
+            res.json({
+              message: 'successfully logged in!',
+              token: 'coolbro'
+            })
+          } else {
+            res.status(401).end()
+          }
+        })
+    })
+    .catch(err => {
+      console.log(err)
+    })
 })
+
 //update user by id
 router.put('/update-user/:id', (req, res) => {
   User.findByIdAndUpdate(req.params.id, req.body, { new: true }).then(
@@ -66,9 +75,9 @@ router.post('/create-user', (req, res) => {
       res.send(err)
     } else {
       res.json({
-        message: "successfully logged in!",
-        token: "coolbro"
-      });
+        message: 'successfully logged in!',
+        token: 'coolbro'
+      })
     }
   })
 })
