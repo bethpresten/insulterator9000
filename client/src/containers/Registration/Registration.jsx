@@ -51,7 +51,7 @@ const Registration = ({ setToken }) => {
   const handleLogin = (e) => {
     e.preventDefault();
     axios
-      .post("/api/login", { email, password })
+      .post("/api/users/login", { email, password })
       .then((response) => {
         console.log(response);
         setToken(response.data.token);
