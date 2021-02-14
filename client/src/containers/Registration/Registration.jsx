@@ -3,16 +3,14 @@ import { useParams, useHistory, Link } from "react-router-dom";
 import "./Registration.css";
 import axios from "axios";
 
-
-const Registration = ({setToken}) => {
-  const [firstname, setFirstName] = useState('')
-  const [lastname, setLastName] = useState('')
-  const [password, setPassword] = useState('')
-  const [email, setEmail] = useState('')
-  const [occupation, setOccupation] = useState('')
-  const [sport, setSport] = useState('')
-  const [hobby, setHobby] = useState('')
-
+const Registration = ({ setToken }) => {
+  const [firstname, setFirstName] = useState("");
+  const [lastname, setLastName] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [occupation, setOccupation] = useState("");
+  const [sport, setSport] = useState("");
+  const [hobby, setHobby] = useState("");
 
   const { id } = useParams();
 
@@ -22,9 +20,9 @@ const Registration = ({setToken}) => {
       axios
         .post(`/api/users/create-user`)
 
-        .then(response => {
+        .then((response) => {
           console.log(response.data);
-          
+
           const {
             firstname,
             lastname,
@@ -52,48 +50,47 @@ const Registration = ({setToken}) => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    axios.post("/api/login", {email, password}).then((response)=> {
-      console.log(response);
-      setToken(response.data.token);
-      history.push("/dashboard")
-    }).catch((err)=> {
-      console.log(err);
-    });
+    axios
+      .post("/api/login", { email, password })
+      .then((response) => {
+        console.log(response);
+        setToken(response.data.token);
+        history.push("/dashboard");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
-  
   const handleCreateProfile = (e, userData) => {
     e.preventDefault();
     axios
       .post(`/api/users/create-user`, userData)
 
-      .then(response => {
+      .then((response) => {
         // setToken(response.data.token);
-        console.log(response.data)
-        alert('user profile succesffuly created!');
+        console.log(response.data);
+        alert("user profile succesffuly created!");
         localStorage.clear();
-        localStorage.setItem('id', response.data._id)
-        localStorage.setItem('sport', response.data.sport)
-        localStorage.setItem('occupation', response.data.occupation)
-        localStorage.setItem('hobby', response.data.hobby)
+        localStorage.setItem("id", response.data._id);
+        localStorage.setItem("sport", response.data.sport);
+        localStorage.setItem("occupation", response.data.occupation);
+        localStorage.setItem("hobby", response.data.hobby);
         // history.push('/dashboard')
-        
-
       })
       .catch((err) => {
         console.log(err);
-      })
-      // .catch((err) => {
-      //   console.log(err);
-      // })
-      // .post("/api/login", {email, password}).then((response)=> {
-      //   console.log(response);
-      //   setToken(response.data.token);
-      //   history.push("/dashboard")
-      // }).catch((err)=> {
-      //   console.log(err);
-      // });
-
+      });
+    // .catch((err) => {
+    //   console.log(err);
+    // })
+    // .post("/api/login", {email, password}).then((response)=> {
+    //   console.log(response);
+    //   setToken(response.data.token);
+    //   history.push("/dashboard")
+    // }).catch((err)=> {
+    //   console.log(err);
+    // });
   };
   return (
     <div className="container">
@@ -106,7 +103,6 @@ const Registration = ({setToken}) => {
         <form
           className="col s12"
           onSubmit={(e) => {
-            
             handleCreateProfile(
               e,
               {
@@ -120,7 +116,7 @@ const Registration = ({setToken}) => {
               },
               id
             );
-            handleLogin(e)
+            handleLogin(e);
           }}
         >
           <div className="row">
@@ -235,12 +231,11 @@ const Registration = ({setToken}) => {
             onSubmit={handleCreateProfile}
           >
             Finish Registration
-            <i className="material-icons right">send</i>
           </button>
         </form>
       </div>
     </div>
   );
-}
+};
 
 export default Registration;
