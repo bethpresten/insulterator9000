@@ -16,9 +16,10 @@ const Filter = require('bad-words'),
   filter = new Filter()
 filter.addWords('dicks', 'fuckton')
 
-function App () {
-  const [token, setToken] = useState('')
 
+function App() {
+  const [token, setToken] = useState('');
+  // localStorage.clear();
   // localStorage.setItem(
   //   'user',
   //   JSON.stringify({

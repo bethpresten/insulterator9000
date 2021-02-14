@@ -75,7 +75,7 @@ function InsultResults () {
               <button
                 className='waves-effect waves-light btn-large hoverable'
                 onClick={() => {
-                  window.location.reload()
+                  getInsult();
                 }}
               >
                 Generate Another

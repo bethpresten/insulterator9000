@@ -12,7 +12,7 @@ const UserCard = () => {
   const [data, setData] = useState(initialState);
 
   const getData = () => {
-    const id = localStorage.getItem("user");
+    let id = localStorage.getItem('id');
     console.log(id);
     if (id) {
       axios

@@ -9,8 +9,9 @@ const Login = ({ setToken }) => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("/api/login", { email, password })
+      .post("/api/users/login", { email, password })
       .then((response) => {
+        localStorage.setItem('id', response.data.id)
         console.log(response);
         setToken(response.data.token);
         history.push("/dashboard");
