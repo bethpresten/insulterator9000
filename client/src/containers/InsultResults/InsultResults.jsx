@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { TwitterShareButton } from 'react-share'
+import { TwitterIcon } from 'react-share'
 import './InsultResults.css'
 import axios from 'axios'
-const Filter = require('bad-words'),
-  filter = new Filter()
-filter.addWords('dicks', 'fuckton', 'fuckload', 'assload')
 
 function InsultResults () {
   const [userInsult, setInsult] = useState('')
+  const [userTweet, setTweet] = useState('')
+
   //first get the user data and pass to the BE
   const getUserData = () => {
     const sport = localStorage.getItem('sport')
@@ -27,17 +28,15 @@ function InsultResults () {
     }
     fetch('/api/users/data', OPTIONS)
       .then(res => res.json())
-      .then(res => {
-        console.log(res)
-      })
+      .then(res => {})
   }
   //second generate the insult from templates available and 3rd party API call on BE
   const getInsult = () => {
     axios
       .get(`/api/users/get-insult`)
       .then(response => {
-        console.log(response.data)
         setInsult(response.data)
+        setTweet(`Insulterator 9000: ${response.data}`)
       })
       .catch(err => {
         console.log(err)
@@ -62,6 +61,15 @@ function InsultResults () {
               </div>
             </div>
             <br />
+            <div className='row'>
+              <TwitterShareButton
+                url='https://warm-anchorage-65464.herokuapp.com/#/'
+                title={userTweet}
+                className='Demo__some-network__share-button'
+              >
+                <TwitterIcon size={32} round />
+              </TwitterShareButton>
+            </div>
             <br />
             <div className='row'>
               <button
