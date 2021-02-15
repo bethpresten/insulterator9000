@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
 import M from "materialize-css/dist/js/materialize.min.js";
-
 function Navbar() {
   useEffect(() => {
     let sidenav = document.querySelector(".sidenav");
@@ -55,7 +54,6 @@ function Navbar() {
               </NavLink>
             </li>
           </ul>
-
           <ul id="mobile-nav" className="sidenav">
             <li>
               <NavLink
@@ -90,5 +88,4 @@ function Navbar() {
     </div>
   );
 }
-
 export default Navbar;

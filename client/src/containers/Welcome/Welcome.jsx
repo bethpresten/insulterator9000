@@ -7,7 +7,7 @@ function Welcome() {
       <br />
       <div className="collection">
         <h1 id="welcome-title">
-          WELCOME!! >>> GET YOUR SASSY #$%&#@* INSULTS HERE!
+          WELCOME!! >> GET YOUR SASSY #$%&#@* INSULTS HERE!
         </h1>
       </div>
       <div>
