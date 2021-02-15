@@ -4,21 +4,19 @@
   width: 95%;
   font-family: "Lato", sans-serif;
 }
-
 #contact-div {
   margin-right: 25%;
 }
-
 .btn,
 .btn-large,
 .btn-small {
   background-color: #ebb3a2;
   color: black !important;
   font-weight: 900;
-  font-family: "Lato", sans-serif;
+  font-family: "Lora", sans-serif;
+  font-size: 18px;
   border-radius: 8px;
 }
-
 .btn:hover,
 .btn-large:hover,
 .btn-small:hover {
@@ -26,7 +24,6 @@
   color: black;
   border-radius: 8px;
 }
-
 .btn:focus,
 .btn-large:focus,
 .btn-small:focus {
@@ -34,17 +31,14 @@
   color: black;
   border-radius: 8px;
 }
-
 .btn:active,
 .btn-large:active,
 .btn-small:active {
   color: black;
 }
-
 body {
   background-color: #fcf7eb;
 }
-
 .container {
   margin: auto;
   width: 85%;
