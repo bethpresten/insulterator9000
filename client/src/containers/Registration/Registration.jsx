@@ -51,15 +51,15 @@ const Registration = ({ setToken }) => {
   const handleLogin = (e) => {
     e.preventDefault();
     axios
-      .post("/api/users/login", { email, password })
-      .then((response) => {
-        console.log(response);
-        localStorage.setItem("id", response.data.id);
-        localStorage.setItem("sport", response.data.sport);
-        localStorage.setItem("occupation", response.data.occupation);
-        localStorage.setItem("hobby", response.data.hobby);
-        setToken(response.data.token);
-        history.push("/dashboard");
+      .post('/api/users/login', { email, password })
+      .then(response => {
+        console.log(response)
+        localStorage.setItem('id', response.data.id)
+        localStorage.setItem('sport', response.data.sport)
+        localStorage.setItem('occupation', response.data.occupation)
+        localStorage.setItem('hobby', response.data.hobby)
+        setToken(response.data.token)
+        history.push('/dashboard')
       })
       .catch((err) => {
         console.log(err);
@@ -76,10 +76,17 @@ const Registration = ({ setToken }) => {
 
       .then((response) => {
         // setToken(response.data.token);
+<<<<<<< HEAD
         console.log(response.data);
         alert("user profile succesffuly created!");
         localStorage.clear();
 
+=======
+        console.log(response.data)
+        alert('user profile succesffuly created!')
+        localStorage.clear()
+        
+>>>>>>> 59184b76f53b2938af52166f115ccb22dd86f52f
         // history.push('/dashboard')
       })
       .catch((err) => {
