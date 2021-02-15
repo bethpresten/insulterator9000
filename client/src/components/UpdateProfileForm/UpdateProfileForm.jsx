@@ -1,13 +1,12 @@
-import React, { useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import axios from 'axios'
-// import DeleteProfileButton from "../DeleteProfileButton/DeleteProfileButton";
 
 const UpdateProfileForm = () => {
   const [occupation, setOccupation] = useState('')
   const [sport, setSport] = useState('')
   const [hobby, setHobby] = useState('')
-  const history = useHistory();
+  const history = useHistory()
   const { id } = useParams()
 
   useEffect(() => {
@@ -29,19 +28,24 @@ const UpdateProfileForm = () => {
   }, [id])
 
   const handleUpdateProfile = (e, userData) => {
-    e.preventDefault();
-    // e.preventDefault()
+    e.preventDefault()
     console.log(userData)
     let id = localStorage.getItem('id')
     axios
       .put(`/api/users/update-user/${id}`, userData)
       .then(response => {
         console.log(response.data)
-        alert('user profile updated!');
-        history.push("/dashboard");
-        localStorage.setItem("sport", sport);
-        localStorage.setItem("hobby", hobby);
-        localStorage.setItem("occupation", occupation);
+        //validate user entry in at least one input
+        if (sport || hobby || occupation) {
+          localStorage.setItem('sport', sport)
+          localStorage.setItem('hobby', hobby)
+          localStorage.setItem('occupation', occupation)
+        } else {
+          alert('Please submit at least one update.')
+          return
+        }
+        alert('user profile updated!')
+        history.push('/dashboard')
       })
       .catch(err => {
         console.log(err)
@@ -76,7 +80,7 @@ const UpdateProfileForm = () => {
                 setOccupation(e.target.value)
               }}
             />
-            <label for='occupation'>Occupation</label>
+            <label htmlFor='occupation'>Occupation</label>
           </div>
         </div>
         <div className='row'>
@@ -90,7 +94,7 @@ const UpdateProfileForm = () => {
                 setHobby(e.target.value)
               }}
             />
-            <label for='hobby'>Name one hobby</label>
+            <label htmlFor='hobby'>Name one hobby</label>
           </div>
         </div>
         <div className='row'>
@@ -104,7 +108,7 @@ const UpdateProfileForm = () => {
                 setSport(e.target.value)
               }}
             />
-            <label for='Favorite Sport'>Favorite Sport</label>
+            <label htmlFor='Favorite Sport'>Favorite Sport</label>
           </div>
         </div>
         <div className='row'>
@@ -114,7 +118,6 @@ const UpdateProfileForm = () => {
               type='submit'
               name='action'
               id='update-button'
-              
             >
               Update Profile
             </button>

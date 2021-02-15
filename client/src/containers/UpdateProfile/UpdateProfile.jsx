@@ -1,11 +1,9 @@
-import { useParams, useHistory, Link } from 'react-router-dom';
-import "./UpdateProfile.css";
-import DeleteProfileButton from "../../components/DeleteProfileButton/DeleteProfileButton";
-import UserCard from "../../components/UserCard/UserCard";
-import UpdateProfileForm from "../../components/UpdateProfileForm/UpdateProfileForm";
+import './UpdateProfile.css'
+import DeleteProfileButton from '../../components/DeleteProfileButton/DeleteProfileButton'
+import UserCard from '../../components/UserCard/UserCard'
+import UpdateProfileForm from '../../components/UpdateProfileForm/UpdateProfileForm'
 
 const UpdateProfile = () => {
-  
   // const handleUpdateProfile = (e, userData) => {
   //   e.preventDefault()
   //   axios
@@ -18,18 +16,18 @@ const UpdateProfile = () => {
   //     })
   // }
   return (
-    <div className="container center-align">
-      <div className="row">
-        <div className="col s4">
+    <div className='container center-align'>
+      <div className='row'>
+        <div className='col s4'>
           <UserCard />
         </div>
         <UpdateProfileForm />
       </div>
-      <div className="row" id="delete-row">
+      <div className='row' id='delete-row'>
         <DeleteProfileButton />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default UpdateProfile;
+export default UpdateProfile
