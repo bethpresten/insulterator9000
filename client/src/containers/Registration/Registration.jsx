@@ -54,8 +54,15 @@ const Registration = ({ setToken }) => {
       .post("/api/users/login", { email, password })
       .then((response) => {
         console.log(response);
+        localStorage.setItem("id", response.data.id);
+        localStorage.setItem("sport", response.data.sport);
+        localStorage.setItem("occupation", response.data.occupation);
+        localStorage.setItem("hobby", response.data.hobby);
         setToken(response.data.token);
         history.push("/dashboard");
+      })
+      .catch((err) => {
+        console.log(err);
       })
       .catch((err) => {
         console.log(err);
@@ -72,10 +79,7 @@ const Registration = ({ setToken }) => {
         console.log(response.data);
         alert("user profile succesffuly created!");
         localStorage.clear();
-        localStorage.setItem("id", response.data._id);
-        localStorage.setItem("sport", response.data.sport);
-        localStorage.setItem("occupation", response.data.occupation);
-        localStorage.setItem("hobby", response.data.hobby);
+
         // history.push('/dashboard')
       })
       .catch((err) => {

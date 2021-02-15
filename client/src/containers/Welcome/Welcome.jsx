@@ -1,6 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Welcome.css";
-
 function Welcome() {
   return (
     <div>
@@ -20,6 +20,16 @@ function Welcome() {
           title="Anchorman insult"
           allowFullScreen
         ></iframe>
+        <Link className="btn-large hoverable" to="/login" id="login-button">
+          Login
+        </Link>
+        <Link
+          className="btn-large hoverable"
+          to="/registration"
+          id="register-button"
+        >
+          Register
+        </Link>
         <iframe
           src="https://giphy.com/embed/Pjg3K3U4y0tjbc17Mx"
           width="480"
@@ -35,5 +45,4 @@ function Welcome() {
     </div>
   );
 }
-
 export default Welcome;

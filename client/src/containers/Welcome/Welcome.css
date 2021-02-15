@@ -6,3 +6,11 @@ h1,
 h3 {
   font-family: "Eater", cursive;
 }
+#login-button {
+  margin-left: 5%;
+  margin-top: 5%;
+}
+#register-button {
+  margin-left: 5%;
+  margin-top: 5%;
+}
