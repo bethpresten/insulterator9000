@@ -12,7 +12,7 @@ const UserCard = () => {
   const [data, setData] = useState(initialState);
 
   const getData = () => {
-    let id = localStorage.getItem('id');
+    let id = localStorage.getItem("id");
     console.log(id);
     if (id) {
       axios
@@ -34,7 +34,7 @@ const UserCard = () => {
   }, []);
 
   return (
-    <div className>
+    <div>
       <div className="card horizontal hoverable">
         <div className="card-stacked">
           <div className="card-content left-align">
