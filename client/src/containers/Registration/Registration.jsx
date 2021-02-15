@@ -15,11 +15,10 @@ const Registration = ({ setToken }) => {
   const { id } = useParams();
 
   useEffect(() => {
-    // console.log(id);
+    localStorage.clear();
     if (id) {
       axios
         .post(`/api/users/create-user`)
-
         .then((response) => {
           console.log(response.data);
 
@@ -59,7 +58,7 @@ const Registration = ({ setToken }) => {
         localStorage.setItem("occupation", response.data.occupation);
         localStorage.setItem("hobby", response.data.hobby);
         setToken(response.data.token);
-        history.push("/dashboard");
+        // history.push('/dashboard')
       })
       .catch((err) => {
         console.log(err);
@@ -73,14 +72,10 @@ const Registration = ({ setToken }) => {
     e.preventDefault();
     axios
       .post(`/api/users/create-user`, userData)
-
       .then((response) => {
-        // setToken(response.data.token);
         console.log(response.data);
-        alert("user profile succesffuly created!");
-        localStorage.clear();
-
-        // history.push('/dashboard')
+        alert("user profile successfully created!");
+        history.push("/dashboard");
       })
       .catch((err) => {
         console.log(err);
@@ -131,6 +126,7 @@ const Registration = ({ setToken }) => {
                 type="text"
                 className="validate"
                 value={firstname}
+                required
                 onChange={(e) => {
                   setFirstName(e.target.value);
                 }}
@@ -142,6 +138,7 @@ const Registration = ({ setToken }) => {
                 type="text"
                 className="validate"
                 value={lastname}
+                required
                 onChange={(e) => {
                   setLastName(e.target.value);
                 }}
@@ -156,6 +153,7 @@ const Registration = ({ setToken }) => {
                 type="password"
                 // className="validate"
                 value={password}
+                required
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
@@ -167,9 +165,10 @@ const Registration = ({ setToken }) => {
             <div className="input-field col s12">
               <input
                 id="email"
-                type="text"
+                type="email"
                 // className="validate"
                 value={email}
+                required
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
@@ -183,6 +182,7 @@ const Registration = ({ setToken }) => {
                 id="occupation"
                 type="text"
                 className="validate"
+                required
                 value={occupation}
                 onChange={(e) => {
                   setOccupation(e.target.value);
@@ -198,6 +198,7 @@ const Registration = ({ setToken }) => {
                 type="text"
                 className="validate"
                 value={sport}
+                required
                 onChange={(e) => {
                   setSport(e.target.value);
                 }}
@@ -212,6 +213,7 @@ const Registration = ({ setToken }) => {
                 type="text"
                 className="validate"
                 value={hobby}
+                required
                 onChange={(e) => {
                   setHobby(e.target.value);
                 }}
@@ -227,7 +229,6 @@ const Registration = ({ setToken }) => {
             Already have an account?
           </Link>
           <button
-            to="/dashboard"
             className="btn waves-effect waves-light"
             type="submit"
             name="action"

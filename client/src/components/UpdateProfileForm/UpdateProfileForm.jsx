@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
-// import DeleteProfileButton from "../DeleteProfileButton/DeleteProfileButton";
 
 const UpdateProfileForm = () => {
   const [occupation, setOccupation] = useState("");
@@ -30,16 +29,21 @@ const UpdateProfileForm = () => {
 
   const handleUpdateProfile = (e, userData) => {
     e.preventDefault();
-    // e.preventDefault()
     console.log(userData);
     let id = localStorage.getItem("id");
     axios
       .put(`/api/users/update-user/${id}`, userData)
       .then((response) => {
         console.log(response.data);
-        localStorage.setItem("sport", sport);
-        localStorage.setItem("hobby", hobby);
-        localStorage.setItem("occupation", occupation);
+        //validate user entry in at least one input
+        if (sport || hobby || occupation) {
+          localStorage.setItem("sport", sport);
+          localStorage.setItem("hobby", hobby);
+          localStorage.setItem("occupation", occupation);
+        } else {
+          alert("Please submit at least one update.");
+          return;
+        }
         alert("user profile updated!");
         history.push("/dashboard");
       })
