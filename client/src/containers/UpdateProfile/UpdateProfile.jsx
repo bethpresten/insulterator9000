@@ -4,21 +4,10 @@ import UserCard from "../../components/UserCard/UserCard";
 import UpdateProfileForm from "../../components/UpdateProfileForm/UpdateProfileForm";
 
 const UpdateProfile = () => {
-  // const handleUpdateProfile = (e, userData) => {
-  //   e.preventDefault()
-  //   axios
-  //     .post('/api/user/:id', userData)
-  //     .then(response => {
-  //       console.log(response.data)
-  //     })
-  //     .catch(err => {
-  //       console.log(err)
-  //     })
-  // }
   return (
     <div className="container center-align">
       <div className="row">
-        <div className="col s4">
+        <div className="col s4 m6">
           <UserCard />
         </div>
         <UpdateProfileForm />

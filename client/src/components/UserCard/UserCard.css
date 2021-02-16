@@ -5,10 +5,6 @@
 
 @media (max-width: 375px) {
   .card {
-    height: auto;
-  }
-
-  .row {
-    display: inline-block;
+    height: 400px;
   }
 }
