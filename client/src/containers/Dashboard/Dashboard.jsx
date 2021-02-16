@@ -4,6 +4,7 @@ import './Dashboard.css'
 import UserCard from '../../components/UserCard/UserCard'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+
 const _id = ''
 
 function Dashboard () {
@@ -42,6 +43,8 @@ function Dashboard () {
             </button>
           </Link>
         </div>
+        
+      
         <div className='col s6'>
           <Link to={`/updateprofile/${_id}`}>
             <button className='waves-effect waves btn hoverable'>
