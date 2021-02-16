@@ -3,16 +3,14 @@ import { useParams, useHistory } from 'react-router-dom'
 import axios from 'axios'
 
 const UpdateProfileForm = () => {
-
   let [occupation, setOccupation] = useState('')
   let [sport, setSport] = useState('')
   let [hobby, setHobby] = useState('')
-  let history = useHistory();
+  let history = useHistory()
   let { id } = useParams()
   let userSport = localStorage.getItem('sport')
   let userHobby = localStorage.getItem('hobby')
   let userOccupation = localStorage.getItem('occupation')
-
 
   useEffect(() => {
     // console.log(id);
@@ -33,15 +31,12 @@ const UpdateProfileForm = () => {
   }, [id])
 
   const handleUpdateProfile = (e, userData) => {
-
-    e.preventDefault();
+    e.preventDefault()
 
     console.log(userData)
     let id = localStorage.getItem('id')
-   
 
-    
-      axios
+    axios
       .put(`/api/users/update-user/${id}`, userData)
       .then(response => {
         console.log(response.data)
@@ -60,31 +55,26 @@ const UpdateProfileForm = () => {
       .catch(err => {
         console.log(err)
       })
-    
-
   }
-
-
-
 
   return (
     <>
       <form
         className='col s8'
         onSubmit={e => {
-          if( hobby == ""){
-              hobby = userHobby;
+          if (hobby === '') {
+            hobby = userHobby
           }
-          if( sport ==""){
-            sport = userSport;
+          if (sport === '') {
+            sport = userSport
           }
-          if( occupation == ""){
-            occupation = userOccupation;
+          if (occupation === '') {
+            occupation = userOccupation
           }
-         
+
           handleUpdateProfile(
             e,
-            
+
             {
               occupation,
               sport,
@@ -92,7 +82,6 @@ const UpdateProfileForm = () => {
             },
             id
           )
-          
         }}
       >
         <div className='row'>
@@ -144,7 +133,6 @@ const UpdateProfileForm = () => {
               type='submit'
               name='action'
               id='update-button'
-
             >
               Update Profile
             </button>

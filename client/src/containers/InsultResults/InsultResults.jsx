@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { TwitterShareButton } from 'react-share'
-import { TwitterIcon } from 'react-share'
+import { TwitterShareButton, FacebookShareButton } from 'react-share'
+import { TwitterIcon, FacebookIcon } from 'react-share'
 import './InsultResults.css'
 import axios from 'axios'
 
 function InsultResults () {
   const [userInsult, setInsult] = useState('')
   const [userTweet, setTweet] = useState('')
+  const [userFacebook, setFacebook] = useState('')
 
   //first get the user data and pass to the BE
   const getUserData = () => {
@@ -37,6 +38,7 @@ function InsultResults () {
       .then(response => {
         setInsult(response.data)
         setTweet(`Insulterator 9000: ${response.data}`)
+        setFacebook(`Insulterator 9000: ${response.data}`)
       })
       .catch(err => {
         console.log(err)
@@ -65,17 +67,24 @@ function InsultResults () {
               <TwitterShareButton
                 url='https://warm-anchorage-65464.herokuapp.com/#/'
                 title={userTweet}
-                className='Demo__some-network__share-button'
+                className='social-media-share-button'
               >
                 <TwitterIcon size={32} round />
               </TwitterShareButton>
+              <FacebookShareButton
+                url='https://warm-anchorage-65464.herokuapp.com/#/'
+                quote={userFacebook}
+                className='social-media-share-button'
+              >
+                <FacebookIcon size={32} round />
+              </FacebookShareButton>
             </div>
             <br />
             <div className='row'>
               <button
                 className='waves-effect waves-light btn-large hoverable'
                 onClick={() => {
-                  getInsult();
+                  getInsult()
                 }}
               >
                 Generate Another
