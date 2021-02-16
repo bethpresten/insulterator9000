@@ -26,7 +26,7 @@ function Dashboard() {
           <h1>Ready to be insulted?</h1>
         </div>
       </div>
-      <div className="row center-align" id="user-card">
+      <div className="row center-align">
         <UserCard />
       </div>
       <div className="row">

@@ -36,34 +36,39 @@ const UpdateProfileForm = () => {
     console.log(userData);
     let id = localStorage.getItem("id");
 
-    axios.put(`/api/users/update-user/${id}`, userData).then((response) => {
-      console.log(response.data);
-      //validate user entry in at least one input
-      if (sport || hobby || occupation) {
-        localStorage.setItem("sport", sport);
-        localStorage.setItem("hobby", hobby);
-        localStorage.setItem("occupation", occupation);
-      } else {
-        alert("Please submit at least one update.");
-        return;
-      }
-      alert("user profile updated!");
-      history.push("/dashboard");
-    });
+    axios
+      .put(`/api/users/update-user/${id}`, userData)
+      .then((response) => {
+        console.log(response.data);
+        //validate user entry in at least one input
+        if (sport || hobby || occupation) {
+          localStorage.setItem("sport", sport);
+          localStorage.setItem("hobby", hobby);
+          localStorage.setItem("occupation", occupation);
+        } else {
+          alert("Please submit at least one update.");
+          return;
+        }
+        alert("user profile updated!");
+        history.push("/dashboard");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
     <>
       <form
-        className="col s12 m4 l3"
+        className="col s12 m6 l3"
         onSubmit={(e) => {
-          if (hobby == "") {
+          if (hobby === "") {
             hobby = userHobby;
           }
-          if (sport == "") {
+          if (sport === "") {
             sport = userSport;
           }
-          if (occupation == "") {
+          if (occupation === "") {
             occupation = userOccupation;
           }
 

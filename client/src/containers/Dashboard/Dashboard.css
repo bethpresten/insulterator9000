@@ -5,17 +5,3 @@ h5 {
 .btn {
   width: auto !important;
 }
-
-@media only screen and (max-width: 650px) {
-  #user-card {
-    height: 500px;
-    width: 400px;
-  }
-}
-
-@media only screen and (max-width: 375px) {
-  #user-card {
-    height: 500px;
-    width: 400px;
-  }
-}

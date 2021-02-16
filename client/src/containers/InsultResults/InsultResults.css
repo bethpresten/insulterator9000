@@ -5,3 +5,7 @@
 h3 {
   font-family: "Eater", cursive;
 }
+
+.react-share__ShareButton.social-media-share-button {
+  padding: 5px !important;
+}
