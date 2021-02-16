@@ -133,7 +133,7 @@ const selectTemplate = insultURL => {
   switch (randNumb) {
     //Sports Team insults
     case 0:
-      return `https://insult.mattbas.org/api/insult.json?template=The+${userData.sport}+are+as+%3Cadjective%3E+as+%3Carticle+target%3Dadj1%3E+%3Cadjective+min%3D1+max%3D3+id%3Dadj1%3E+%3Camount%3E+of+%3Cadjective+min%3D1+max%3D3%3E+%3Canimal%3E+%3Canimal_part%3E`
+      return `https://insult.mattbas.org/api/insult.json?template=${(userData.sport).charAt(0).toUpperCase() + (userData.sport).slice(1)}+is+as+%3Cadjective%3E+as+%3Carticle+target%3Dadj1%3E+%3Cadjective+min%3D1+max%3D3+id%3Dadj1%3E+%3Camount%3E+of+%3Cadjective+min%3D1+max%3D3%3E+%3Canimal%3E+%3Canimal_part%3E`
     case 1:
       return `https://insult.mattbas.org/api/insult.json?template=Only+${userData.sport}+fans+are+%3Cadjective%3E+%3Canimal%3E+%3Canimal_part%3E`
     //Occupation insults
