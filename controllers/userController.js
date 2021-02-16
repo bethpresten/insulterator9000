@@ -75,7 +75,7 @@ router.put('/update-user/:id', (req, res) => {
 
 //create/add user
 router.post('/create-user', (req, res) => {
-  User.create(req.body, function (err, result) {
+  User.create(req.body, function (err) {
     //use req.body.email & req.body.password here...
     if (err) {
       res.send(err)
@@ -115,7 +115,7 @@ router.get('/get-insult/', (req, res) => {
     })
 })
 
-// route to all passing user data (id, sport, occupation, hobby) from FE to BE
+// route for passing user data (id, sport, occupation, hobby) from FE to BE
 
 router.post('/data', (req, res) => {
   console.log(req.body)

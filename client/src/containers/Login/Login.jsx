@@ -36,9 +36,10 @@ const Login = ({ setToken }) => {
               <i className='material-icons prefix'>account_circle</i>
               <input
                 id='icon_prefix'
-                type='text'
+                type='email'
                 className='validate'
                 value={email}
+                required
                 onChange={e => {
                   setEmail(e.target.value)
                 }}
@@ -54,6 +55,7 @@ const Login = ({ setToken }) => {
                 type='password'
                 className='validate'
                 value={password}
+                required
                 onChange={e => {
                   setPassword(e.target.value)
                 }}

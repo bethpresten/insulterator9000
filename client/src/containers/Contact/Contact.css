@@ -4,11 +4,9 @@
   width: 95%;
   font-family: "Lato", sans-serif;
 }
-
 #contact-div {
   margin-right: 25%;
 }
-
 .btn,
 .btn-large,
 .btn-small {
@@ -26,7 +24,6 @@
   color: black;
   border-radius: 8px;
 }
-
 .btn:focus,
 .btn-large:focus,
 .btn-small:focus {
@@ -34,17 +31,14 @@
   color: black;
   border-radius: 8px;
 }
-
 .btn:active,
 .btn-large:active,
 .btn-small:active {
   color: black;
 }
-
 body {
   background-color: #fcf7eb;
 }
-
 .container {
   margin: auto;
   width: 85%;
