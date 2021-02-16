@@ -35,9 +35,11 @@ const UserCard = () => {
 
   return (
     <div>
+
       <div className='card horizontal hoverable'>
         <div className='card-stacked'>
           <div className='card-content left-align'>
+
             <h5>
               Name: {data.firstname} {data.lastname}
             </h5>
