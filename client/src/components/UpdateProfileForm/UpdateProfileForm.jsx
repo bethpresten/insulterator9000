@@ -60,7 +60,7 @@ const UpdateProfileForm = () => {
   return (
     <>
       <form
-        className='col s8'
+        className='col s12 m4 l3'
         onSubmit={e => {
           if (hobby === '') {
             hobby = userHobby
