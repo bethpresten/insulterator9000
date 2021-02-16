@@ -9,12 +9,9 @@ ul {
 .container {
   padding: 20px;
   margin: 20px;
-  width: 85%;
-  /* background-color: whitesmoke; */
 }
 #delete-row {
   text-align: right;
-  padding-top: 10%;
 }
 @media only screen and (max-width: 375px) {
   .card {

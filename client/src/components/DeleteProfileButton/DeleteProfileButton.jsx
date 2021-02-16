@@ -1,43 +1,39 @@
-import React from "react";
-import axios from "axios";
-import "./DeleteProfileButton.css";
-import { Link} from "react-router-dom";
-function DeleteProfileButton() {
+import React from 'react'
+import axios from 'axios'
+import './DeleteProfileButton.css'
+import { Link } from 'react-router-dom'
+function DeleteProfileButton () {
   // const { id } = useParams();
-  let id = localStorage.getItem("id");
+  let id = localStorage.getItem('id')
   const deleteProfile = () => {
-    
     if (id) {
       axios
         .delete(`/api/users/delete-user/${id}`)
         .then(() => {
-          alert("profile successfully deleted!");
-          localStorage.clear();
+          alert('profile successfully deleted!')
+          localStorage.clear()
           // history.push("/welcome");
-          console.log("profile deleted")
-          
+          console.log('profile deleted')
         })
-        .catch((err) => {
-          console.log(err);
-        });
+        .catch(err => {
+          console.log(err)
+        })
     }
-  };
+  }
   return (
-    <div>
-      <Link to="/">
+    <div className='center-align'>
+      <Link to='/'>
         <button
-          className="btn hoverable"
-          id="delete-button"
-          // to="/welcome"
+          className='btn hoverable'
+          id='delete-button'
           onClick={() => {
-            deleteProfile();
-            // history.push("/welcome");
+            deleteProfile()
           }}
         >
-          Delete Insulterator9000 Profile
+          Delete Profile
         </button>
       </Link>
     </div>
-  );
+  )
 }
-export default DeleteProfileButton;
+export default DeleteProfileButton

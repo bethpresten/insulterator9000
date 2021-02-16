@@ -9,7 +9,9 @@ const UpdateProfile = () => {
         <div className='col s4 m6'>
           <UserCard />
         </div>
-        <UpdateProfileForm />
+        <div className='col s8 m6'>
+          <UpdateProfileForm />
+        </div>
       </div>
       <div className='row' id='delete-row'>
         <DeleteProfileButton />
