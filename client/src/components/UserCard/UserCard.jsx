@@ -34,7 +34,7 @@ const UserCard = () => {
   }, []);
 
   return (
-    <div className>
+    <div>
       <div className="card horizontal hoverable">
         <div className="card-stacked">
           <div className="card-content left-align">

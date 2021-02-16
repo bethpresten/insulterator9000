@@ -1,14 +1,17 @@
-import React, { useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import axios from 'axios'
 // import DeleteProfileButton from "../DeleteProfileButton/DeleteProfileButton";
 
 const UpdateProfileForm = () => {
-  const [occupation, setOccupation] = useState('')
-  const [sport, setSport] = useState('')
-  const [hobby, setHobby] = useState('')
-  const history = useHistory();
-  const { id } = useParams()
+  let [occupation, setOccupation] = useState('')
+  let [sport, setSport] = useState('')
+  let [hobby, setHobby] = useState('')
+  let history = useHistory();
+  let { id } = useParams()
+  let userSport = localStorage.getItem('sport')
+  let userHobby = localStorage.getItem('hobby')
+  let userOccupation = localStorage.getItem('occupation')
 
   useEffect(() => {
     // console.log(id);
@@ -30,10 +33,13 @@ const UpdateProfileForm = () => {
 
   const handleUpdateProfile = (e, userData) => {
     e.preventDefault();
-    // e.preventDefault()
+    
     console.log(userData)
     let id = localStorage.getItem('id')
-    axios
+   
+
+    
+      axios
       .put(`/api/users/update-user/${id}`, userData)
       .then(response => {
         console.log(response.data)
@@ -46,15 +52,31 @@ const UpdateProfileForm = () => {
       .catch(err => {
         console.log(err)
       })
+    
+
   }
+
+
+
 
   return (
     <>
       <form
         className='col s8'
         onSubmit={e => {
+          if( hobby == ""){
+              hobby = userHobby;
+          }
+          if( sport ==""){
+            sport = userSport;
+          }
+          if( occupation == ""){
+            occupation = userOccupation;
+          }
+         
           handleUpdateProfile(
             e,
+            
             {
               occupation,
               sport,
@@ -62,7 +84,7 @@ const UpdateProfileForm = () => {
             },
             id
           )
-          handleUpdateProfile(e)
+          
         }}
       >
         <div className='row'>
@@ -114,7 +136,7 @@ const UpdateProfileForm = () => {
               type='submit'
               name='action'
               id='update-button'
-              
+
             >
               Update Profile
             </button>

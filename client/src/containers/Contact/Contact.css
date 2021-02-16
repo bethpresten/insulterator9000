@@ -15,10 +15,10 @@
   background-color: #ebb3a2;
   color: black !important;
   font-weight: 900;
-  font-family: "Lato", sans-serif;
+  font-family: "Lora", sans-serif;
+  font-size: 18px;
   border-radius: 8px;
 }
-
 .btn:hover,
 .btn-large:hover,
 .btn-small:hover {
