@@ -2,3 +2,13 @@
   width: 400px !important;
   background-color: whitesmoke;
 }
+
+@media (max-width: 375px) {
+  .card {
+    height: auto;
+  }
+
+  .row {
+    display: inline-block;
+  }
+}

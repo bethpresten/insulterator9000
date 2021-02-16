@@ -3,11 +3,14 @@ import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 
 const UpdateProfileForm = () => {
-  const [occupation, setOccupation] = useState("");
-  const [sport, setSport] = useState("");
-  const [hobby, setHobby] = useState("");
-  const history = useHistory();
-  const { id } = useParams();
+  let [occupation, setOccupation] = useState("");
+  let [sport, setSport] = useState("");
+  let [hobby, setHobby] = useState("");
+  let history = useHistory();
+  let { id } = useParams();
+  let userSport = localStorage.getItem("sport");
+  let userHobby = localStorage.getItem("hobby");
+  let userOccupation = localStorage.getItem("occupation");
 
   useEffect(() => {
     // console.log(id);
@@ -29,27 +32,24 @@ const UpdateProfileForm = () => {
 
   const handleUpdateProfile = (e, userData) => {
     e.preventDefault();
+
     console.log(userData);
     let id = localStorage.getItem("id");
-    axios
-      .put(`/api/users/update-user/${id}`, userData)
-      .then((response) => {
-        console.log(response.data);
-        //validate user entry in at least one input
-        if (sport || hobby || occupation) {
-          localStorage.setItem("sport", sport);
-          localStorage.setItem("hobby", hobby);
-          localStorage.setItem("occupation", occupation);
-        } else {
-          alert("Please submit at least one update.");
-          return;
-        }
-        alert("user profile updated!");
-        history.push("/dashboard");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+
+    axios.put(`/api/users/update-user/${id}`, userData).then((response) => {
+      console.log(response.data);
+      //validate user entry in at least one input
+      if (sport || hobby || occupation) {
+        localStorage.setItem("sport", sport);
+        localStorage.setItem("hobby", hobby);
+        localStorage.setItem("occupation", occupation);
+      } else {
+        alert("Please submit at least one update.");
+        return;
+      }
+      alert("user profile updated!");
+      history.push("/dashboard");
+    });
   };
 
   return (
@@ -57,8 +57,19 @@ const UpdateProfileForm = () => {
       <form
         className="col s8"
         onSubmit={(e) => {
+          if (hobby == "") {
+            hobby = userHobby;
+          }
+          if (sport == "") {
+            sport = userSport;
+          }
+          if (occupation == "") {
+            occupation = userOccupation;
+          }
+
           handleUpdateProfile(
             e,
+
             {
               occupation,
               sport,
@@ -66,7 +77,6 @@ const UpdateProfileForm = () => {
             },
             id
           );
-          handleUpdateProfile(e);
         }}
       >
         <div className="row">

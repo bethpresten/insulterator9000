@@ -19,3 +19,9 @@ ul {
   text-align: right;
   padding-top: 10%;
 }
+
+@media only screen and (max-width: 375px) {
+  .container {
+    flex-direction: column;
+  }
+}
