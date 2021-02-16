@@ -85,7 +85,7 @@ const UpdateProfileForm = () => {
         }}
       >
         <div className="row">
-          <div className="input-field col s12">
+          <div className="input-field col s12 m12 l12">
             <input
               id="occupation"
               type="text"
