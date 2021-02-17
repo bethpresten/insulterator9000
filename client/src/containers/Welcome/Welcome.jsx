@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Welcome.css";
+
 function Welcome() {
   return (
     <div>
@@ -45,4 +46,5 @@ function Welcome() {
     </div>
   );
 }
+
 export default Welcome;

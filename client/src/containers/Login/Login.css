@@ -1,13 +1,7 @@
-#login-form {
-  width: 90%;
-}
-
 .row {
   text-align: center;
 }
 
-@media only screen and (max-width: 375px) {
-  h1 {
-    font-size: 30px;
-  }
+#login-form {
+  width: 90%;
 }

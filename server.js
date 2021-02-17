@@ -31,17 +31,9 @@ connection.on('error', err => {
   console.log('Mongoose connection error: ', err)
 })
 
-//api routing
+//api routing via userController
 
 const UserController = require('./controllers/userController')
-
-//test route
-app.get('/api/config', (req, res) => {
-  res.json({
-    success: true
-  })
-})
-//FIXME: work on this route
 
 //set all routes prefix to '/api/users'
 app.use('/api/users', UserController)

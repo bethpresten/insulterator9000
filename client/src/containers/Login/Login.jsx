@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Login.css'
 import { useHistory, Link } from 'react-router-dom'
 import axios from 'axios'
+
 const Login = ({ setToken }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -20,6 +21,7 @@ const Login = ({ setToken }) => {
         history.push('/dashboard')
       })
       .catch(err => {
+        alert('Email or password incorrect, please re-enter!')
         console.log(err)
       })
   }

@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import Welcome from './containers/Welcome/Welcome'
 import About from './containers/About/About'
@@ -12,30 +11,17 @@ import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
 import InsultResults from './containers/InsultResults/InsultResults'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
-const Filter = require('bad-words'),
-  filter = new Filter()
-filter.addWords('dicks', 'fuckton')
+import bgImage from './Assets/Images/insulterator-background-image.jpg'
+const BackgroundHead = {
+  backgroundImage: 'url(' + bgImage + ')'
+}
 
 function App () {
   const [token, setToken] = useState('')
-  // localStorage.clear();
-  // localStorage.setItem(
-  //   'user',
-  //   JSON.stringify({
-  //     _id: '601c8bc128788e2d19d28463',
-  //     firstname: 'Active',
-  //     lastname: 'User',
-  //     password: 'ActiveUserPW',
-  //     email: 'activeuser@gmail.com',
-  //     hobby: 'hobby',
-  //     sport: 'sport',
-  //     occupation: 'job',
-  //     lastLogin: '2/10/2021'
-  //   })
-  // )
+
   return (
     <>
-      <div className='App'>
+      <div className='App' style={BackgroundHead}>
         <Router>
           <Navbar />
           <Switch>

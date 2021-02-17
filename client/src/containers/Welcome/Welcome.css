@@ -1,11 +1,12 @@
-.collection {
-  text-align: center;
-}
-
 h1,
 h3 {
   font-family: "Eater", cursive;
 }
+
+.collection {
+  text-align: center;
+}
+
 #login-button {
   margin-left: 5%;
   margin-top: 5%;
@@ -13,13 +14,4 @@ h3 {
 #register-button {
   margin-left: 5%;
   margin-top: 5%;
-}
-
-@media only screen and (max-width: 320px) {
-  h1 {
-    font-size: 10px;
-  }
-  .container {
-    flex-direction: column;
-  }
 }
