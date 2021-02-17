@@ -11,16 +11,17 @@ import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
 import InsultResults from './containers/InsultResults/InsultResults'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
-// const Filter = require('bad-words'),
-//   filter = new Filter()
-// filter.addWords('dicks', 'fuckton')
+import bgImage from './Assets/Images/insulterator-background-image.jpg'
+const BackgroundHead = {
+  backgroundImage: 'url(' + bgImage + ')'
+}
 
 function App () {
   const [token, setToken] = useState('')
 
   return (
     <>
-      <div className='App'>
+      <div className='App' style={BackgroundHead}>
         <Router>
           <Navbar />
           <Switch>

@@ -35,13 +35,6 @@ connection.on('error', err => {
 
 const UserController = require('./controllers/userController')
 
-//test route
-// app.get('/api/config', (req, res) => {
-//   res.json({
-//     success: true
-//   })
-// })
-
 //set all routes prefix to '/api/users'
 app.use('/api/users', UserController)
 
