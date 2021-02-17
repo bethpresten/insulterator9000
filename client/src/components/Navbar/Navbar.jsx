@@ -19,7 +19,7 @@ function Navbar() {
             Insulterator9000
           </Link>
           <a
-            href="#"
+            href="foo"
             className="right sidenav-trigger"
             data-target="mobile-nav"
           >
