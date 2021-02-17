@@ -1,24 +1,29 @@
-.card {
-  border-radius: 10px;
-  background-color: whitesmoke;
-}
 ul {
   font-size: 20px;
   font-family: "Lora", serif;
 }
+
+.card {
+  border-radius: 10px;
+  background-color: whitesmoke;
+}
+
 .container {
   padding: 20px;
   margin: 20px;
 }
+
 #delete-row {
   text-align: right;
 }
+
 @media only screen and (max-width: 375px) {
   .card {
     height: 300px;
     width: 200px;
   }
 }
+
 @media only screen and (max-width: 650px) {
   #delete-button {
     font-size: 12px;

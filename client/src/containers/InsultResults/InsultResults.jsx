@@ -30,7 +30,8 @@ function InsultResults () {
     fetch('/api/users/data', OPTIONS).then(res => res.json())
     // .then(res => {})
   }
-  //second generate the insult from templates available and 3rd party API call on BE
+
+  //second generate the insult from templates available and make 3rd party API call on BE
   const getInsult = () => {
     axios
       .get(`/api/users/get-insult`)

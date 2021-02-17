@@ -13,7 +13,6 @@ const UserCard = () => {
 
   const getData = () => {
     let id = localStorage.getItem('id')
-    console.log(id)
     if (id) {
       axios
         .get(`/api/users/get-user/${id}`)

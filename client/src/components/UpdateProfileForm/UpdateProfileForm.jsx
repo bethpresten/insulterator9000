@@ -14,7 +14,6 @@ const UpdateProfileForm = () => {
   let userOccupation = localStorage.getItem('occupation')
 
   useEffect(() => {
-    // console.log(id);
     if (id) {
       axios
         .put(`/api/users/update-user/${id}`)

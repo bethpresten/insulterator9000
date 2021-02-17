@@ -1,9 +1,9 @@
-.btn {
-  border-radius: 10px;
-}
-
 h3 {
   font-family: "Eater", cursive;
+}
+
+.btn {
+  border-radius: 10px;
 }
 
 .react-share__ShareButton.social-media-share-button {

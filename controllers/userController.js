@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt')
 const axios = require('axios')
 const Filter = require('bad-words'),
   filter = new Filter()
+//bad words blacklist
 filter.addWords('dicks', 'fuckton', 'fuckload', 'assload', 'shitload')
 let newURL = ''
 let randNumb = 0
@@ -96,7 +97,6 @@ router.delete('/delete-user/:id', (req, res) => {
 })
 
 // get insult from 3rd party API route
-
 router.get('/get-insult/', (req, res) => {
   newURL = selectTemplate()
   axios
@@ -110,13 +110,12 @@ router.get('/get-insult/', (req, res) => {
 })
 
 // route for passing user data (id, sport, occupation, hobby) from FE to BE
-
 router.post('/data', (req, res) => {
   console.log(req.body)
   userData = req.body
 })
 
-//start insult templates
+//start insult templates, select a template at random from 6 available and pass back query URL to API
 const selectTemplate = insultURL => {
   randNumb = Math.floor(Math.random() * Math.floor(5))
   console.log(`Template #${randNumb} selected!`)
@@ -136,7 +135,7 @@ const selectTemplate = insultURL => {
       return `https://insult.mattbas.org/api/insult.json?template=People+who+are+${userData.occupation}s+secretly+eat+%3Canimal%3E+%3Canimal_part%3E`
     case 3:
       return `https://insult.mattbas.org/api/insult.json?template=So+you%27re+a+${userData.occupation}%3F+I+didn%27t+know+you+were+%3Carticle+target%3Dadj1%3E+%3Cadjective+id%3Dadj1%3E+%3Camount%3E+of+%3Canimal%3E+%3Canimal_part%3E`
-    //hobby insults
+    //Hobby insults
     case 4:
       return `https://insult.mattbas.org/api/insult.json?template=People+who+like+${userData.hobby}+really+like+%3Canimal%3E+%3Canimal_part%3E+because+they%27re+%3Cadjective%3E`
     default:
