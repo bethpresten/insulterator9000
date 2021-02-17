@@ -13,7 +13,6 @@ const UserCard = () => {
 
   const getData = () => {
     let id = localStorage.getItem('id')
-    console.log(id)
     if (id) {
       axios
         .get(`/api/users/get-user/${id}`)
@@ -35,11 +34,9 @@ const UserCard = () => {
 
   return (
     <div>
-
       <div className='card horizontal hoverable'>
         <div className='card-stacked'>
-          <div className='card-content left-align'>
-
+          <div className='card-content'>
             <h5>
               Name: {data.firstname} {data.lastname}
             </h5>

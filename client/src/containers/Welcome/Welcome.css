@@ -1,11 +1,12 @@
-.collection {
-  text-align: center;
-}
-
 h1,
 h3 {
   font-family: "Eater", cursive;
 }
+
+.collection {
+  text-align: center;
+}
+
 #login-button {
   margin-left: 5%;
   margin-top: 5%;

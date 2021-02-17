@@ -1,7 +1,8 @@
 #delete-button {
   background-color: red;
   color: black;
-  margin: 0%;
+  margin-left: 50%;
+  height: auto;
 }
 
 #delete-button:hover {

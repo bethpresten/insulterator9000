@@ -21,7 +21,6 @@ const Registration = ({ setToken }) => {
         .post(`/api/users/create-user`)
         .then(response => {
           console.log(response.data)
-
           const {
             firstname,
             lastname,
@@ -58,7 +57,6 @@ const Registration = ({ setToken }) => {
         localStorage.setItem('occupation', response.data.occupation)
         localStorage.setItem('hobby', response.data.hobby)
         setToken(response.data.token)
-        // history.push('/dashboard')
       })
       .catch(err => {
         console.log(err)
@@ -77,16 +75,6 @@ const Registration = ({ setToken }) => {
       .catch(err => {
         console.log(err)
       })
-    // .catch((err) => {
-    //   console.log(err);
-    // })
-    // .post("/api/login", {email, password}).then((response)=> {
-    //   console.log(response);
-    //   setToken(response.data.token);
-    //   history.push("/dashboard")
-    // }).catch((err)=> {
-    //   console.log(err);
-    // });
   }
   return (
     <div className='container'>
@@ -148,7 +136,6 @@ const Registration = ({ setToken }) => {
               <input
                 id='password'
                 type='password'
-                // className="validate"
                 value={password}
                 required
                 onChange={e => {
@@ -163,7 +150,6 @@ const Registration = ({ setToken }) => {
               <input
                 id='email'
                 type='email'
-                // className="validate"
                 value={email}
                 required
                 onChange={e => {

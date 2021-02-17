@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import axios from 'axios'
+import './UpdateProfileForm.css'
 
 const UpdateProfileForm = () => {
   let [occupation, setOccupation] = useState('')
@@ -13,7 +14,6 @@ const UpdateProfileForm = () => {
   let userOccupation = localStorage.getItem('occupation')
 
   useEffect(() => {
-    // console.log(id);
     if (id) {
       axios
         .put(`/api/users/update-user/${id}`)
@@ -60,7 +60,7 @@ const UpdateProfileForm = () => {
   return (
     <>
       <form
-        className='col s12 m4 l3'
+        className='form'
         onSubmit={e => {
           if (hobby === '') {
             hobby = userHobby

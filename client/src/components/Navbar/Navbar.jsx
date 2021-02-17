@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import './Navbar.css'
 import M from 'materialize-css/dist/js/materialize.min.js'
+
 function Navbar () {
   useEffect(() => {
     let sidenav = document.querySelector('.sidenav')
@@ -19,7 +20,7 @@ function Navbar () {
             Insulterator9000
           </Link>
           <a
-            href='#'
+            href='/#/'
             className='right sidenav-trigger'
             data-target='mobile-nav'
           >
@@ -88,4 +89,5 @@ function Navbar () {
     </div>
   )
 }
+
 export default Navbar

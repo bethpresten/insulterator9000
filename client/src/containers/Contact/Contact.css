@@ -1,12 +1,7 @@
-#contact-form {
-  align-items: center;
-  text-align: center;
-  width: 95%;
-  font-family: "Lato", sans-serif;
-}
-#contact-div {
-  margin-right: 25%;
-}
+/* body {
+  background-color: #fcf7eb;
+} */
+
 .btn,
 .btn-large,
 .btn-small {
@@ -17,6 +12,7 @@
   font-size: 18px;
   border-radius: 8px;
 }
+
 .btn:hover,
 .btn-large:hover,
 .btn-small:hover {
@@ -24,6 +20,7 @@
   color: black;
   border-radius: 8px;
 }
+
 .btn:focus,
 .btn-large:focus,
 .btn-small:focus {
@@ -36,11 +33,19 @@
 .btn-small:active {
   color: black;
 }
-body {
-  background-color: #fcf7eb;
-}
+
 .container {
   margin: auto;
   width: 85%;
   align-items: center;
+}
+
+#contact-form {
+  align-items: center;
+  text-align: center;
+  width: 95%;
+  font-family: "Lato", sans-serif;
+}
+#contact-div {
+  margin-right: 25%;
 }
