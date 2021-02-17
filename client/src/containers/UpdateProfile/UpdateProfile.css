@@ -24,8 +24,8 @@ ul {
     font-size: 12px;
   }
   .card {
-    height: 300px;
-    width: 200px;
+    height: auto;
+    width: 100%;
   }
   .col {
     display: block;

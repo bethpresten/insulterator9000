@@ -27,9 +27,8 @@ function InsultResults () {
         occupation: occupation
       })
     }
-    fetch('/api/users/data', OPTIONS)
-      .then(res => res.json())
-      .then(res => {})
+    fetch('/api/users/data', OPTIONS).then(res => res.json())
+    // .then(res => {})
   }
   //second generate the insult from templates available and 3rd party API call on BE
   const getInsult = () => {
