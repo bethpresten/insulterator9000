@@ -3,6 +3,7 @@ import './Dashboard.css'
 import UserCard from '../../components/UserCard/UserCard'
 import { Link } from 'react-router-dom'
 
+
 function Dashboard () {
   return (
     <div className='container'>
@@ -22,7 +23,7 @@ function Dashboard () {
             </button>
           </Link>
         </div>
-
+        
         <div className='col s6'>
           <Link to={`/updateprofile/`}>
             <button className='waves-effect waves btn hoverable'>

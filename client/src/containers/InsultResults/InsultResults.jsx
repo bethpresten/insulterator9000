@@ -4,6 +4,7 @@ import { TwitterShareButton, FacebookShareButton } from 'react-share'
 import { TwitterIcon, FacebookIcon } from 'react-share'
 import './InsultResults.css'
 import axios from 'axios'
+import LogOutButton from '../../components/LogoutButton/LogoutButton'
 
 function InsultResults () {
   const [userInsult, setInsult] = useState('')
@@ -91,6 +92,7 @@ function InsultResults () {
               </button>
             </div>
             <br />
+            
             <div className='row'>
               <Link to={`/dashboard`}>
                 <button className='waves-effect waves-light btn-large hoverable'>
@@ -98,6 +100,8 @@ function InsultResults () {
                 </button>
               </Link>
             </div>
+            <br/>
+            <LogOutButton/>
           </div>
         </div>
       </div>
