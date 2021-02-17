@@ -1,3 +1,7 @@
+.card.horizontal {
+  background-color: transparent !important;
+}
+
 .card {
-  background-color: whitesmoke;
+  background-color: transparent !important;
 }
