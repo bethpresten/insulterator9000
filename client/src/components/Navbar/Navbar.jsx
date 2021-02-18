@@ -9,7 +9,7 @@ function Navbar () {
     M.Sidenav.init(sidenav, {})
   })
   return (
-    <div className='navbar-fixed'>
+    <div className='navbar-extended'>
       <nav>
         <div className='nav-wrapper'>
           <Link

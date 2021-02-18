@@ -8,18 +8,16 @@ const UpdateProfile = () => {
   return (
     <div className='container center-align'>
       <div className='row'>
-        <div className='col s4 m6'>
+        <div className='col s12 m6 l4'>
           <UserCard />
         </div>
         <div className='col s8 m6'>
           <UpdateProfileForm />
+          <LogOutButton />
+          <DeleteProfileButton />
         </div>
       </div>
-      <div className='row' id='delete-row'>
-        <DeleteProfileButton />
-        <br />
-        <LogOutButton />
-      </div>
+      <div className='row' id='delete-row'></div>
     </div>
   )
 }
