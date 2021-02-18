@@ -8,7 +8,7 @@ const UpdateProfile = () => {
   return (
     <div className="container center-align">
       <div className="row">
-        <div className="col s4 m4 l4">
+        <div className="col s12 m6 l2">
           <UserCard />
         </div>
         <div className="col s8 m6">
