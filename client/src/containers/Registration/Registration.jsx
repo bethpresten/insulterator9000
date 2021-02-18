@@ -104,7 +104,6 @@ const Registration = ({ setToken }) => {
           <div className="row">
             <div className="input-field col s6">
               <input
-                placeholder="First Name"
                 id="firstname"
                 type="text"
                 className="validate"
@@ -114,6 +113,7 @@ const Registration = ({ setToken }) => {
                   setFirstName(e.target.value);
                 }}
               />
+              <label htmlFor="firstname">First Name</label>
             </div>
             <div className="input-field col s6">
               <input
@@ -134,6 +134,7 @@ const Registration = ({ setToken }) => {
               <input
                 id="password"
                 type="password"
+                className="validate"
                 value={password}
                 required
                 onChange={(e) => {
@@ -148,6 +149,7 @@ const Registration = ({ setToken }) => {
               <input
                 id="email"
                 type="email"
+                className="validate"
                 value={email}
                 required
                 onChange={(e) => {

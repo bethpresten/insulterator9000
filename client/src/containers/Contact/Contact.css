@@ -1,7 +1,3 @@
-/* body {
-  background-color: #fcf7eb;
-} */
-
 .btn,
 .btn-large,
 .btn-small {
@@ -48,4 +44,9 @@
 }
 #contact-div {
   margin-right: 25%;
+}
+
+.input-field > label {
+  color: black;
+  font-weight: 800;
 }
