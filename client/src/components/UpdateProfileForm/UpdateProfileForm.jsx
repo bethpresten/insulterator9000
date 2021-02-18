@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import axios from 'axios'
 import './UpdateProfileForm.css'
+import LogOutButton from '../../components/LogoutButton/LogoutButton'
 
 const UpdateProfileForm = () => {
   let [occupation, setOccupation] = useState('')
@@ -127,16 +128,15 @@ const UpdateProfileForm = () => {
           </div>
         </div>
         <div className='row'>
-          <div className='col s12'>
-            <button
-              className='btn waves-effect waves-light'
-              type='submit'
-              name='action'
-              id='update-button'
-            >
-              Update Profile
-            </button>
-          </div>
+          <button
+            className='btn waves-effect waves-light'
+            type='submit'
+            name='action'
+            id='update-button'
+          >
+            Update Profile
+          </button>
+          <LogOutButton />
         </div>
       </form>
     </>
