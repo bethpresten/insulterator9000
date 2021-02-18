@@ -15,7 +15,7 @@ The motivation for the Insulterator 9000 was we wanted to give users a lighthear
 
 ## Method: 
 
-The first step of our application is using verification. Using we're able to verify the user has logged in to the page, and has a token to navigate through the system. Using local storage, we've also taken basic id information to reference in our api methods, especially when we handle a delete profile. Once log out or profile deletion occurs, we clear out the local storage. On the insult generation, we take parts of the object within our database and randomize an insulted response, using an insult api we found. Using basic pre set templates with injected object based values, we create custom insults for specific variable types, such as one's job, favorite sport, or their hobby. 
+The first step of our application is using verification. Using our api route, we're able to verify the user has logged in to the page, and has a token to navigate through the system. The token takes care of any unauthorized access into the app, requiring users to actually log in. This is achieved using protected routes. Using local storage, we've also taken basic id information to reference in our api methods, especially when we handle a delete profile. Once log out or profile deletion occurs, we clear out the local storage and the token. On the insult generation, we take parts of the object within our database and randomize an insulted response, using an insult api we found. Using basic pre set templates with injected object based values, we create custom insults for specific variable types, such as one's job, favorite sport, or their hobby. 
 
 
 ## Demonstration:
@@ -36,9 +36,11 @@ The first step of our application is using verification. Using we're able to ver
 
 ![UpdatingUser]()
 
-### -Logging in
+### -Logging in/Logging out
 
 ![LoggingIn]()
+
+![LoggingOut]()
 
 ### -Generating an insult
 
@@ -53,6 +55,10 @@ MongoDB for databasing
 Materialize CSS for stylizing of our app
 
 React
+
+Bcrypt for encryption of passwords on our database
+
+React-share for social media sharability of insults
 
 Localstorage for handling user ids
 
