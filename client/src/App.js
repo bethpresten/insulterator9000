@@ -13,10 +13,11 @@ import InsultResults from './containers/InsultResults/InsultResults'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import bgImage from './Assets/Images/insulterator-background-image.jpg'
 const BackgroundHead = {
-  backgroundImage: 'url(' + bgImage + ')'
+  backgroundImage: 'url(' + bgImage + ')',
+
 }
 
-function App () {
+function App() {
   const [token, setToken] = useState('')
 
   return (

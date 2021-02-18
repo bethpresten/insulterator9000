@@ -5,3 +5,7 @@
 #login-form {
   width: 90%;
 }
+
+input:-internal-autofill-selected {
+  background-color: transparent;
+}

@@ -20,9 +20,5 @@
 body {
   background-image: url("client/src/Assets/Images/insulterator-background-image.jpg");
   margin: 0;
-}
-
-.container {
-  margin: 0;
-  overflow: auto;
+  overflow: auto !important;
 }
