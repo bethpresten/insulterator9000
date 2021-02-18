@@ -60,21 +60,19 @@ const Registration = ({ setToken }) => {
       })
       .catch((err) => {
         console.log(err);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
 
   const handleCreateProfile = (e, userData) => {
     e.preventDefault();
-    axios
-      .post(`/api/users/create-user`, userData)
-      .then((response) => {
-        console.log(response.data);
-        alert("user profile successfully created!");
-        history.push("/dashboard");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    axios.post(`/api/users/create-user`, userData).then((response) => {
+      console.log(response.data);
+      alert("user profile successfully created!");
+      history.push("/dashboard");
+    });
   };
   return (
     <div className="container">
@@ -136,6 +134,7 @@ const Registration = ({ setToken }) => {
               <input
                 id="password"
                 type="password"
+                className="validate"
                 value={password}
                 required
                 onChange={(e) => {
@@ -150,6 +149,7 @@ const Registration = ({ setToken }) => {
               <input
                 id="email"
                 type="email"
+                className="validate"
                 value={email}
                 required
                 onChange={(e) => {
@@ -219,7 +219,6 @@ const Registration = ({ setToken }) => {
             onSubmit={handleCreateProfile}
           >
             Finish Registration
-            <i className="material-icons right">send</i>
           </button>
         </form>
       </div>

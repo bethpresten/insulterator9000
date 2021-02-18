@@ -24,12 +24,12 @@ function Contact() {
             <div className="input-field col s8">
               <i className="material-icons prefix">account_circle</i>
               <input
-                placeholder="Name"
-                id="name"
+                id="fullname"
                 type="text"
                 className="validate"
                 name="Name"
               />
+              <label htmlFor="fullname">Name</label>
             </div>
           </div>
           <div className="row">
@@ -38,10 +38,10 @@ function Contact() {
               <input
                 type="email"
                 className="validate"
-                placeholder="Email address"
                 name="Email"
                 id="_replyto"
               />
+              <label htmlFor="email">Email</label>
             </div>
             <div className="input-field col s8" id="message-row">
               <i className="material-icons prefix">message</i>
@@ -50,9 +50,9 @@ function Contact() {
                 type="text"
                 className="validate"
                 name="Message"
-                placeholder="Message"
                 rows="3"
               />
+              <label htmlFor="Message">Message</label>
             </div>
           </div>
           <div className="row" id="contact-div">
