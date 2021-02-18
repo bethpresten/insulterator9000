@@ -13,10 +13,6 @@ ul {
   margin: 20px;
 }
 
-#delete-row {
-  text-align: right;
-}
-
 @media only screen and (max-width: 375px) {
   .card {
     height: 300px;
