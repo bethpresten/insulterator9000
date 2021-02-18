@@ -12,6 +12,9 @@ function Contact() {
   return (
     <div className="container" id="contact-form">
       <div className="row">
+        <h4>Contact Us</h4>
+      </div>
+      <div className="row">
         <form
           action="https://formspree.io/f/mbjpblpg"
           className="col s12"
