@@ -5,7 +5,7 @@ import "./Welcome.css";
 function Welcome() {
   return (
     <div>
-      <div className="row">
+      <div className="row" id="welcome-row">
         <div className="collection">
           <h1 id="welcome-title">
             WELCOME!! >> GET YOUR SASSY #$%&#@* INSULTS HERE!

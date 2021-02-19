@@ -14,7 +14,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import bgImage from './Assets/Images/insulterator-background-image.jpg'
 const BackgroundHead = {
   backgroundImage: 'url(' + bgImage + ')',
-
+  height: "800px"
 }
 
 function App() {
