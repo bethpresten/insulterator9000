@@ -12,6 +12,7 @@ import Footer from './components/Footer/Footer'
 import InsultResults from './containers/InsultResults/InsultResults'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import bgImage from './Assets/Images/insulterator-background-image.jpg'
+// pushing background image to the entire app
 const BackgroundHead = {
   backgroundImage: 'url(' + bgImage + ')',
   height: "1500px"
