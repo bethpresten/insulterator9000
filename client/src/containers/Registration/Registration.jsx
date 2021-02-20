@@ -75,7 +75,7 @@ const Registration = ({ setToken }) => {
     });
   };
   return (
-    <div className="container">
+    <div className="container" id="registration-container">
       <div className="row">
         <div className="col s12">
           <h1 id="registration-heading">Register a new account!</h1>
