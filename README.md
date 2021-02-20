@@ -12,37 +12,9 @@ To create a local instance of our project, navigate up to the top of the page an
 
 The motivation for the Insulterator 9000 was we wanted to give users a lighthearted experience with being given silly insults from an insult generating app. In light of all that is going on in this world, it's always healthy to have a good laugh!
 
-
 ## Method: 
 
 The first step of our application is using verification. Using we're able to verify the user has logged in to the page, and has a token to navigate through the system. Using local storage, we've also taken basic id information to reference in our api methods, especially when we handle a delete profile. Once log out or profile deletion occurs, we clear out the local storage. On the insult generation, we take parts of the object within our database and randomize an insulted response, using an insult api we found. Using basic pre set templates with injected object based values, we create custom insults for specific variable types, such as one's job, favorite sport, or their hobby. 
-
-
-## Demonstration:
-
-### -Navigation
-
-![Navigation]()
-
-### -Creating a User
-
-![CreatingUser]()
-
-### -Deleting a User
-
-![DeletingUser]()
-
-### -Updating a User
-
-![UpdatingUser]()
-
-### -Logging in
-
-![LoggingIn]()
-
-### -Generating an insult
-
-![GeneratingInsult]()
 
 ## Technologies Used:
 
