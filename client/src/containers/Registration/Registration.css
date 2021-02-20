@@ -1,8 +1,13 @@
 #registration-heading {
-  font-family: "Handlee", cursive;
+  font-family: "Eater", cursive;
 }
 
 #registration-login-button,
 #registration-button {
   margin-left: 15%;
+}
+
+#registration-container {
+  height: 1500px;
+  overflow-y: scroll;
 }
